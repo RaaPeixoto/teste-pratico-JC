@@ -1,0 +1,682 @@
+.settings {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999990999;
+    background-color: transparent;
+    height: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings .workspace {
+    background-color: var(--branco);
+    padding: 0px;
+    border-radius: 7px;
+    box-shadow: var(--shadow);
+    width: 90%;
+    height: 90%;
+    max-width: 1200px;
+    position: relative;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.settings .workspace i.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 99999999;
+}
+
+.settings .workspace h1 {
+    font-size: 18px;
+    padding: 10px;
+}
+
+.settings .workspace p {
+    font-size: 12px;
+}
+
+.settings button.btmCircular {
+    margin-top: 10px;
+    background-color: var(--blue);
+    color: white;
+    font-family: 'Bold';
+}
+
+.settings button.btmCircular:hover {
+    background-color: var(--blue);
+}
+
+.settings .worktable {
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--cinza);
+    /* margin-top: -130px; */
+    display: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-height: 100%;
+    overflow: auto;
+    box-shadow: var(--shadow);
+    border-radius: 7px;
+    z-index: 99;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+}
+
+.settings .worktable h2 {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+i {
+    transition: 0.2s;
+}
+
+i.aberto {
+    transform: rotate(180deg);
+}
+
+i.fechado {
+    transform: rotate(0deg);
+}
+
+.settings .worktable .close {
+    font-size: 12px;
+}
+
+.settings .worktable .line {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.settings .worktable .line .condicao,
+.settings .worktable .line .acao {
+    padding: 10px;
+    background-color: var(--branco);
+    width: 48%;
+    border: 1px solid var(--linecolor);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+}
+
+.worktable .ligador {
+    width: 4%;
+    height: auto;
+    /* background-color: var(--blue); */
+    margin-left: -1%;
+    margin-right: -1%;
+    z-index: 9;
+    margin-top: 8px;
+}
+
+.worktable h4 {
+    padding: 10px;
+}
+
+.worktable button {
+    padding: 10px;
+    margin: 0px 0px;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    transition: 0.2s;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+}
+
+.worktable button i {
+    font-size: 22px;
+    background-color: var(--cinza);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-right: 10px
+}
+
+.worktable button:hover i,
+.worktable button:hover {
+    color: var(--blue);
+}
+
+button.ativo i,
+button.ativo {
+    color: var(--blue);
+}
+
+.container {
+    padding: 20px;
+}
+
+.container label {
+    font-size: 14px;
+}
+
+.list_persons,
+.list_step,
+.list_tags {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    float: left;
+    max-height: 230px;
+    overflow: auto;
+}
+
+.list_persons label,
+.list_tags label,
+.list_step label {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 7px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list_persons label input,
+.list_tags label input,
+.list_step label input {
+    margin-right: 10px;
+}
+
+.action,
+.config {
+    position: relative;
+    width: 100%;
+}
+
+.action label,
+.config label {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.settings .workspace .action i.close,
+.settings .workspace .config i.close {
+    top: 10px;
+    right: 10px;
+}
+
+div.step {
+    display: none;
+}
+
+.settings .menu {
+    position: relative;
+    width: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+
+#card_movido .list_step {
+    height: 230px;
+}
+
+select.list_pipes {
+    padding: 10px;
+    width: 90%;
+    margin-left: 10px;
+    position: relative;
+    float: left;
+    background-color: var(--offblue);
+    border: 1px solid var(--linecolor);
+    border-radius: 7px;
+    margin-bottom: 8px;
+}
+
+.dislabled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--branco);
+    z-index: 9;
+    opacity: 0.7;
+}
+
+.settings .addTag {
+    padding: 10px;
+    background-color: var(--cinza);
+    position: relative;
+    width: 100%;
+    float: left;
+    border-radius: 7px;
+    box-shadow: var(--shadow);
+    display: none;
+}
+
+.cores {
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.settings .addTag .cores label {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    margin: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.settings .addTag input#newTag {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--linecolor);
+    border-radius: 7px;
+    background-color: var(--offblue);
+}
+
+.settings .addTag button.btmCircular {
+    margin-top: 10px;
+    position: relative;
+    float: right;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.settings .addTag button.btmCircular:hover {
+    color: white;
+}
+
+a.action_click {
+    color: var(--blue);
+    padding: 10px;
+    text-decoration: underline;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    width: 100%;
+    float: left;
+}
+
+.settings .botoes {
+    border-top: 1px solid var(--linecolor);
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    display: block;
+}
+
+.settings .botoes button.btmCircular {
+    margin: 3px;
+    float: right;
+}
+
+.settings .botoes button.btmCircular:hover {
+    box-shadow: var(--shadow);
+    color: white;
+}
+
+.config h6,
+.action h6 {
+    color: var(--blue);
+    padding-left: 10px;
+}
+
+input#newTask {
+    position: relative;
+    width: 97%;
+    padding: 10px;
+    margin: 5px;
+    margin-top: -5px;
+    border: 0;
+    border-top: 1px solid var(--linecolor);
+    border-bottom: 1px solid var(--linecolor);
+    background-image: url(../img/more.svg);
+    background-position: 5px;
+    background-repeat: no-repeat;
+    background-size: 14px;
+    padding-left: 23px;
+}
+
+div.task {
+    position: relative;
+    width: 97%;
+    padding: 10px;
+    margin: 5px;
+    margin-top: -6px;
+    border: 0;
+    border-top: 1px solid var(--linecolor);
+    border-bottom: 1px solid var(--linecolor);
+    background-image: url(../img/circle-small.svg);
+    background-position: 5px;
+    background-repeat: no-repeat;
+    background-size: 14px;
+    padding-left: 23px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.task i {
+    font-size: 12px;
+    display: none;
+    cursor: pointer;
+}
+
+div.task:hover i {
+    display: block;
+}
+
+input#automation_title {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 0;
+    padding: 10px;
+    border-bottom: 1px solid var(--linecolor);
+    font-size: 18px;
+    z-index: -1;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.auto-criadas div.linha {
+    padding: 20px;
+    border: 1px solid var(--linecolor);
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.auto-criadas div.linha h6 {
+    color: var(--blue);
+}
+
+.auto-criadas div.linha h4 {
+    font-family: 'Regular';
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.auto-criadas div.linha h2 {
+    font-size: 18px;
+}
+
+.auto-criadas div.linha .campo {
+    position: relative;
+    max-width: 200px;
+}
+
+.auto-criadas div.linha .campo .status {
+    width: 50px;
+    height: 30px;
+    background-color: antiquewhite;
+    border-radius: 50px;
+    border: 1px solid var(--linecolor);
+    padding: 2px;
+    position: relative;
+    cursor: pointer;
+    background-color: var(--cinza);
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.auto-criadas div.linha .campo .status .circle {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.auto-criadas div.linha .campo .status.actived {
+    background-color: var(--blue);
+}
+
+.auto-criadas div.linha .campo .status.actived .circle {
+    float: right;
+}
+
+.auto-criadas div.linha .campo .status.desactived {
+    background-color: #dadada;
+}
+
+.auto-criadas div.linha .campo .status.desactived .circle {
+    float: left;
+}
+
+.auto-criadas div.linha .campo i {
+    cursor: pointer;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-color: #eaeaea;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.auto-criadas {
+    position: relative;
+    width: 100%;
+    max-height: 430px;
+    overflow: auto;
+}
+
+.auto-criadas .edit {
+    position: relative;
+    width: 100%;
+    margin-top: 16px;
+    display: none;
+}
+
+.apps {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.apps .elemento:hover .usar {
+    border: 0;
+    color: black;
+    background-color: var(--offblue);
+    font-weight: 900;
+    display: block;
+}
+
+.apps .elemento .icone {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: var(--branco);
+    border-radius: 50px;
+    padding: 8px;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+}
+
+.apps .elemento .destaque {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+.apps .elemento h3 {
+    padding: 5px 10px;
+    font-size: 22px;
+}
+
+.apps .elemento p {
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.elemento {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    border: 1px solid var(--linecolor);
+    border-radius: 7px;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.settings .menuLateral {
+    padding: 10px;
+    width: 20%;
+    text-align: left;
+    border-right: 1px solid var(--linecolor);
+    height: 100%;
+}
+
+.settings .menuLateral button.menu {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    /* margin: 10px; */
+    transition: 0.2s;
+    float: left;
+    padding: 14px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.settings .menuLateral button.menu:hover {
+    background-color: var(--cinza);
+    color: var(--black);
+}
+
+.settings .menuLateral button.menu.ative {
+    background-color: var(--blue);
+    color: white;
+}
+
+.settings .menuLateral button.menu.ative i {
+    color: white;
+}
+
+.conteudo_settings {
+    width: 80%;
+    padding: 30px;
+    height: 100%;
+    overflow: auto;
+}
+
+div.itemConfig {
+    padding: 20px;
+    background-color: var(--cinza);
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.divisor {
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    background-color: var(--branco);
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.divisor label {
+    padding: 10px;
+    cursor: pointer;
+}

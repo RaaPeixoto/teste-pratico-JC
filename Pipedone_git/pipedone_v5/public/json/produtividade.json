@@ -1,0 +1,184 @@
+[{
+    "title": "Kanban",
+    "description": "Visualize suas tarefas, limite o trabalho em andamento e maximize a eficiência. Foi criado para a melhoria constante no fluxo e qualidade do trabalho.",
+    "category": "Produtividade",
+    "image": "/img/fotos/kanban.jpg",
+    "icon": "/img/svg/fi-rr-clipboard-list-check.svg",
+    "color": "#d1e08d",
+    "steps": [{
+        "title": "Tarefas",
+        "powerups": {},
+        "color": "#1B0E73",
+        "metadata": []
+    }, {
+        "title": "A fazer",
+        "powerups": {},
+        "color": "#F2B705",
+        "metadata": []
+    }, {
+        "title": "Fazendo",
+        "powerups": {},
+        "color": "#42378C",
+        "metadata": []
+    }, {
+        "title": "Feito",
+        "powerups": {},
+        "color": "#F20505",
+        "metadata": []
+    }]
+}, {
+    "title": "Trabalho remoto",
+    "description": "Organize suas atividades e não deixe nada passar despercebido.",
+    "category": "Produtividade",
+    "image": "/img/fotos/trabalho-remoto.jpg",
+    "icon": "/img/svg/fi-rr-clipboard-list-check.svg",
+    "color": "#c68de0",
+    "steps": [{
+        "title": "Pendente",
+        "powerups": {},
+        "color": "#191659",
+        "metadata": []
+    }, {
+        "title": "Fazendo",
+        "powerups": {},
+        "color": "#2EA67A",
+        "metadata": []
+    }, {
+        "title": "Pausado",
+        "powerups": {},
+        "color": "#2E3159",
+        "metadata": []
+    }, {
+        "title": "Revisão",
+        "powerups": {},
+        "color": "#730202",
+        "metadata": []
+    }, {
+        "title": "Finalizado",
+        "powerups": {},
+        "color": "#D92525",
+        "metadata": []
+    }]
+}, {
+    "title": "Sprint",
+    "description": "O método utilizado pelo Google para realizar tarefas em 1 ou 2 semanas.",
+    "category": "Produtividade",
+    "image": "/img/fotos/sprint.png ",
+    "icon": "/img/svg/fi-rr-clipboard-list-check.svg",
+    "color": "#c68de0",
+    "steps": [{
+        "title": "Mapeamento",
+        "powerups": {},
+        "color": "#191659",
+        "metadata": []
+    }, {
+        "title": "Esboços",
+        "powerups": {},
+        "color": "#2EA67A",
+        "metadata": []
+    }, {
+        "title": "Seleção",
+        "powerups": {},
+        "color": "#2E3159",
+        "metadata": []
+    }, {
+        "title": "Protótipo",
+        "powerups": {},
+        "color": "#730202",
+        "metadata": []
+    }, {
+        "title": "Testes",
+        "powerups": {},
+        "color": "#D92525",
+        "metadata": []
+    }]
+}, {
+    "title": "Scrum",
+    "description": "Dividida seu projeto em diversos (pequenos) ciclos de atividades e realize o processo com agilidade.",
+    "category": "Produtividade",
+    "image": "/img/fotos/scrum.jpg ",
+    "icon": "/img/svg/fi-rr-clipboard-list-check.svg",
+    "color": "#c68de0",
+    "steps": [{
+        "title": "Histórias",
+        "powerups": {},
+        "color": "#191659",
+        "metadata": []
+    }, {
+        "title": "Pendências",
+        "powerups": {},
+        "color": "#2EA67A",
+        "metadata": []
+    }, {
+        "title": "Em andamento",
+        "powerups": {},
+        "color": "#2E3159",
+        "metadata": []
+    }, {
+        "title": "Teste",
+        "powerups": {},
+        "color": "#730202",
+        "metadata": []
+    }, {
+        "title": "Feito",
+        "powerups": {},
+        "color": "#D92525",
+        "metadata": []
+    }]
+}, {
+    "title": "PDCA",
+    "description": "Metódo simples e poderoso para ciclos de crescimento.",
+    "category": "Produtividade",
+    "image": "/img/fotos/pdca.jpg",
+    "icon": "/img/svg/fi-rr-clipboard-list-check.svg",
+    "color": "#d1e08d",
+    "steps": [{
+        "title": "Planejamento",
+        "powerups": {},
+        "color": "#1B0E73",
+        "metadata": []
+    }, {
+        "title": "Aplicação",
+        "powerups": {},
+        "color": "#F2B705",
+        "metadata": []
+    }, {
+        "title": "Análise",
+        "powerups": {},
+        "color": "#42378C",
+        "metadata": []
+    }, {
+        "title": "Correções",
+        "powerups": {},
+        "color": "#F20505",
+        "metadata": []
+    }]
+}, {
+    "title": "Design Thinking",
+    "description": "Estimule a ideação e perspicácia abordando problemas relacionados a futuras aquisições de informações, análise de conhecimento e propostas de soluções.",
+    "category": "Produtividade",
+    "image": "/img/fotos/design-thinking.jpg",
+    "icon": "/img/svg/fi-rr-clipboard-list-check.svg",
+    "color": "#d1e08d",
+    "steps": [{
+        "title": "Planejamento",
+        "powerups": {},
+        "color": "#1B0E73",
+        "metadata": []
+    }, {
+        "title": "Aplicação",
+        "powerups": {},
+        "color": "#F2B705",
+        "metadata": []
+    }, {
+        "title": "Análise",
+        "powerups": {},
+        "color": "#42378C",
+        "metadata": []
+    }, {
+        "title": "Correções",
+        "powerups": {},
+        "color": "#F20505",
+        "metadata": []
+    }]
+}]

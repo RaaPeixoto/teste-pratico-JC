@@ -1,0 +1,107 @@
+{{>header}}
+<link rel="stylesheet" href="/css/pagamentos.css">
+<div class="geral">
+    <div class="identidade">
+        <img src="/img/pipepay.svg" alt="PipePay">
+    </div>
+
+    <div class="infoPayments">
+        <div class="dado">
+            <span>Dinheiro disponível</span>
+            <h1 id="dinheiro_disponivel">R$ 0.00</h1>
+            {{!-- <span>R$ 0,00 a liberar</span> --}}
+        </div>
+        <hr>
+        <div class="botoes">
+            
+            <button><svg viewBox="0 0 56 56" role="img" aria-label="" class="icon-default shortcut__icon"><path fill="#444" fill-rule="nonzero" d="M38.75 33.977v3.75H16v-1.5h21.25v-2.25h1.5zM38.5 14v8.477H37V18.13l-.23.144c-.208.125-.436.25-.685.375l-.263.127c-1.96.915-4.617 1.452-8.072 1.452H17.5v12.5h10.25l.457-.003c3.158-.047 5.522-.575 7.208-1.418.596-.298 1.055-.611 1.396-.918.124-.112.21-.201.262-.26l.053-.067 1.248.832-.07.099c-.35.47-1.057 1.075-2.219 1.656-1.984.992-4.723 1.58-8.335 1.58H16v-15.5h11.75l.457-.004c3.158-.047 5.522-.575 7.208-1.418.596-.298 1.055-.611 1.396-.918.187-.168.287-.284.315-.327L38.5 14zm-10.75 7.727a4.75 4.75 0 110 9.5 4.75 4.75 0 010-9.5zm12.53 1.393l3.359 3.358-3.359 3.358-1.06-1.06 1.547-1.548H34.75v-1.5h6.017L39.22 24.18l1.06-1.06zm-12.53.108a3.25 3.25 0 100 6.502 3.25 3.25 0 000-6.503z"></path></svg><span>Solicitar<br>transferência</span></button>
+            
+            {{!--             
+            <button><svg viewBox="0 0 56 56" role="img" aria-label="" class="icon-default shortcut__icon"><path fill="#44D7B6" fill-rule="evenodd" d="M19.48 26.25a4.909 4.909 0 00-4.98 4.85c0 2.65 2.2 4.84 4.98 4.84 2.79 0 4.98-2.2 4.98-4.84 0-2.64-2.2-4.84-4.98-4.84v-.01zM13 31.1c0-3.5 2.9-6.34 6.48-6.34a6.411 6.411 0 016.48 6.34c0 3.5-2.9 6.34-6.48 6.34A6.411 6.411 0 0113 31.1z" clip-rule="evenodd"></path><path fill="#44D7B6" d="M40.02 23.78v-7.06H15.98v7.06h1.5v-5.6h21.04v5.6h1.5zm0 14.62h-1.5v1.14H17.48V38.4h-1.5V41h24.04v-2.6zM20.08 27.72h-1.03v.9l-.08.02c-.74.17-1.23.72-1.23 1.43 0 .82.4 1.15 1.39 1.43l.37.1.21.06.18.06c.28.1.38.2.38.36 0 .24-.23.44-.72.44-.5 0-.94-.22-1.26-.57l-.12-.13-.61.87.09.1.1.1c.3.3.67.5 1.11.6l.2.03v.89h1.02v-.91l.1-.02c.75-.2 1.17-.75 1.17-1.48 0-.74-.31-1.1-1.07-1.37l-.23-.07a8.433 8.433 0 00-.12-.04l-.38-.1c-.54-.15-.72-.25-.72-.4 0-.24.2-.4.58-.4.44 0 .86.17 1.15.47l.12.12.63-.85-.1-.1-.12-.11c-.28-.24-.6-.4-.98-.5h-.03v-.93zm22.89 3.38l-4.49 4.38-.94-.92 3.55-3.47-3.55-3.47.94-.92 4.49 4.4z"></path><path fill="#44D7B6" d="M28.95 31.74H41.8v-1.3H28.95v1.3zm10.32-10.86v1.46H16.73v-1.46h22.54zM22.4 15v4.9h-1.5V15h1.5zM35 15v4.9h-1.5V15H35z"></path></svg><span>Antecipar<br>dinheiro</span></button> 
+            --}}
+            
+            {{!-- 
+            <button><svg viewBox="0 0 56 56" role="img" aria-label="" class="icon-default shortcut__icon"><path fill="#475EE8" fill-rule="nonzero" d="M36.99 15.526a4.25 4.25 0 014.25 4.25V33.14a4.25 4.25 0 01-4.25 4.25h-5.186l-4.119 3.405-4.142-3.406-4.64.001a4.25 4.25 0 01-4.244-4.044l-.005-.206V19.776a4.25 4.25 0 014.25-4.25zm0 1.5H18.904a2.75 2.75 0 00-2.75 2.75V33.14a2.75 2.75 0 002.75 2.75h5.177l3.602 2.96 3.582-2.96h5.725a2.75 2.75 0 002.75-2.75V19.776a2.75 2.75 0 00-2.75-2.75zm-7.488 7.46l.177.177.115.122a2.749 2.749 0 01-.115 3.767l-3.107 3.108-.123.116a2.88 2.88 0 01-3.952-.116 2.88 2.88 0 010-4.075l1.135-1.135 1.06 1.06-1.135 1.136-.09.098a1.38 1.38 0 002.044 1.855l3.108-3.107.086-.095c.4-.491.371-1.215-.086-1.673l-.178-.178 1.06-1.06zm-.35-3.549a2.881 2.881 0 013.951 4.192l-1.235 1.235-1.061-1.06 1.236-1.236.09-.099a1.38 1.38 0 00-2.044-1.855l-3.108 3.108-.086.095a1.25 1.25 0 00.086 1.672l.026.027-1.06 1.06-.141-.148a2.749 2.749 0 01.115-3.767l3.107-3.108z"></path></svg><span>Criar link<br>de pagamento</span></button> --}}
+            
+            <button><svg viewBox="0 0 56 56" role="img" aria-label="" class="icon-default shortcut__icon"><g fill="none" fill-rule="nonzero"><path fill="#071A90" d="M18.3 14.5h13.708l5.578 5.791v12.781h-1.432V20.866l-4.756-4.939H19.732v24.146h11.319V41.5H18.3z"></path><path fill="#071A90" d="M26.497 27.402v1.433h-4.268v-1.433zm7.469-3.269v1.434H22.229v-1.434z"></path><path fill="#061677" d="M31.911 15.643l-.001 4.635h5.676v1.434h-7.13v-6.069z"></path><path fill="#071A90" d="M37.6 36v2h2v1.5h-2v2h-1.5v-2h-2V38h2v-2h1.5z"></path></g></svg><span>Gerar<br>relatório</span></button>
+            
+        </div>
+    </div>
+
+    <div class="ativits">
+        <h3>Atividades</h3>
+        <div class="busca">
+            <input type="search" placeholder="Buscar" onclick="">
+        </div>
+        <div class="payments"></div>
+        <div class="navpages"></div>
+    </div>
+
+</div>
+<script src="/js/pagamentos.js"></script>
+
+<script>
+
+    const status = {
+        created: '<i class="fi fi-rr-exclamation" style="color: var(--blue)"></i>',
+        pending: '<i class="fi fi-rr-exclamation" style="color: #fff599"></i>',
+        refused: '<i class="fi fi-rr-cross-circle" style="color: #94938a"></i>',
+        approved: '<i class="fi fi-rr-usd-circle" style="color: #96e37d"></i>',      
+        others: '<i class="fi fi-rr-time-forward" style="color: var(--blue)"></i>'
+    }
+    
+    async function setPayments(page){
+        const GetPayments = await axios.get(`/api/pipepay/list/${page}`);
+        var rows = GetPayments.data.rows;
+        var count = GetPayments.data.count;
+        var valor = 0;
+
+        function geradorDeTexto(tipo){
+            switch(tipo){
+                case 'payment':
+                return 'Venda de produto'
+                break;
+            }
+        }
+
+        console.log(rows)
+
+        var elemento = ""
+        for(row of rows){
+            elemento += `<div class="payment">`;
+            elemento += `${status[row.status]}`;
+            elemento += `<div class="text">`;
+            elemento += `<h3>${geradorDeTexto(row.type)}</h3>`;
+            elemento += `<span>#${row.transation_id}</span>`;
+            elemento += `</div>`;
+            elemento += `<div class="valores">`;
+            elemento += `<h6>+ R$ ${parseInt(row.value).toFixed(2)}</h6>`;
+            elemento += `<span>${formData(row.updatedAt)}</span>`;
+            elemento += `</div>`;
+            elemento += `</div>`;
+
+            if(row.status == 'approved'){
+                valor += parseInt(row.value);
+            }
+    
+        }
+
+        var pagenation = "";
+
+        var numberPage = (count / 15).toFixed(1)
+
+        for(let i = 0; i < numberPage; i++ ){
+            pagenation += `<div class="nav" onclick="setPayments(${i + 1})">${i + 1}</div>`;
+        }
+
+        $(`.payments`).html(elemento);
+        $(`.navpages`).html(pagenation);
+        $(`#dinheiro_disponivel`).text(`R$ ${valor}`);
+
+    }
+
+    function solicitarTranferencia(){}
+
+    setPayments(1);
+</script>
+

@@ -1,0 +1,24 @@
+{{>header}}
+<link rel="stylesheet" href="/css/home.css">
+    
+    {{!-- <div class="bemvindo">
+        <img src="/img/robo.png" alt="Sorria!">
+        <p><b id="nome_usuario">Usuário</b>, <span id="mensagem_motivacional">vamos desbravar o mundo?</span></p>
+    </div> --}}
+
+    <div class="head">
+        <h1>Pipes</h1>
+        <input type="search"  onkeyup="busca($(this), '.pipe')" id="pesquisa_topo" placeholder="Pesquisar pipes...">
+    </div>
+    <div class="pipes">
+        <div id="lista_pipes" class=""></div>
+    </div>
+    
+
+<script async src="/js/home.js"></script>
+
+<script>
+    $(`header#geral .ferramentas .pipes_conectados,header#geral #conexoes`).remove();
+    $(`.menuInicial button`).removeClass(`ativo`);
+    $(`#menu_Pipes`).addClass(`ativo`);
+</script>

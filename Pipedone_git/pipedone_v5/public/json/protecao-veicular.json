@@ -1,0 +1,163 @@
+[{
+    "title": "Vendas",
+    "description": "Organize seu time de vendas e não perca mais informações importantes.",
+    "category": "Produtividade",
+    "image": "/img/fotos/vendas-seguro.jpg",
+    "icon": "/img/svg/fi-rr-clipboard-list-check.svg",
+    "color": "#d1e08d",
+    "steps": [{
+        "title": "Entrada",
+        "powerups": {},
+        "color": "#1B0E73",
+        "metadata": []
+    }, {
+        "title": "Cotação",
+        "powerups": {},
+        "color": "#F2B705",
+        "metadata": []
+    }, {
+        "title": "Aceito",
+        "powerups": {},
+        "color": "#42378C",
+        "metadata": []
+    }, {
+        "title": "Adesão",
+        "powerups": {},
+        "color": "#F20505",
+        "metadata": []
+    }, {
+        "title": "Ganha",
+        "powerups": {},
+        "color": "#191659",
+        "metadata": []
+    }, {
+        "title": "Perdida",
+        "powerups": {},
+        "color": "#2EA67A",
+        "metadata": []
+    }]
+}, {
+    "title": "Sinistros",
+    "description": "Acompanhe cada caso de sinistro e ofereça um formulário para abertura rápida de chamado para seu associado.",
+    "category": "Produtividade",
+    "image": "/img/fotos/sinistro-seguro.jpg",
+    "icon": "/img/svg/fi-rr-clipboard-list-check.svg",
+    "color": "#d1e08d",
+    "steps": [{
+        "title": "Abertura",
+        "powerups": {},
+        "color": "#1B0E73",
+        "metadata": []
+    }, {
+        "title": "Vistoria",
+        "powerups": {},
+        "color": "#F2B705",
+        "metadata": []
+    }, {
+        "title": "Orçamento",
+        "powerups": {},
+        "color": "#42378C",
+        "metadata": []
+    }, {
+        "title": "Participação",
+        "powerups": {},
+        "color": "#F20505",
+        "metadata": []
+    }, {
+        "title": "Autorizado",
+        "powerups": {},
+        "color": "#191659",
+        "metadata": []
+    }, {
+        "title": "Qualidade",
+        "powerups": {},
+        "color": "#2EA67A",
+        "metadata": []
+    }, {
+        "title": "Entrega",
+        "powerups": {},
+        "color": "#1B0E73",
+        "metadata": []
+    }, {
+        "title": "Espera",
+        "powerups": {},
+        "color": "#42378C",
+        "metadata": []
+    }]
+}, {
+    "title": "Captação de indicadores",
+    "description": "Crie um fluxo de captação, treinamento e qualificação de indicadores profissionais.",
+    "category": "Produtividade",
+    "image": "/img/fotos/vendedor.jpg",
+    "icon": "/img/svg/fi-rr-clipboard-list-check.svg",
+    "color": "#d1e08d",
+    "steps": [{
+        "title": "Novos",
+        "powerups": {},
+        "color": "#1B0E73",
+        "metadata": []
+    }, {
+        "title": "Qualificação",
+        "powerups": {},
+        "color": "#F2B705",
+        "metadata": []
+    }, {
+        "title": "Cadastro",
+        "powerups": {},
+        "color": "#42378C",
+        "metadata": []
+    }, {
+        "title": "Treinamento",
+        "powerups": {},
+        "color": "#F20505",
+        "metadata": []
+    }, {
+        "title": "Acompanhamento",
+        "powerups": {},
+        "color": "#191659",
+        "metadata": []
+    }, {
+        "title": "Finalizar",
+        "powerups": {},
+        "color": "#2EA67A",
+        "metadata": []
+    }]
+}, {
+    "title": "Ativação de novos associados",
+    "description": "Padronize os processo de ativação e evite erros da sua equipe.",
+    "category": "Produtividade",
+    "image": "/img/fotos/ativacao.jpg",
+    "icon": "/img/svg/fi-rr-clipboard-list-check.svg",
+    "color": "#d1e08d",
+    "steps": [{
+        "title": "Entrada",
+        "powerups": {},
+        "color": "#1B0E73",
+        "metadata": []
+    }, {
+        "title": "Análise",
+        "powerups": {},
+        "color": "#F2B705",
+        "metadata": []
+    }, {
+        "title": "Pendente",
+        "powerups": {},
+        "color": "#42378C",
+        "metadata": []
+    }, {
+        "title": "Ativação",
+        "powerups": {},
+        "color": "#F20505",
+        "metadata": []
+    }, {
+        "title": "Negado",
+        "powerups": {},
+        "color": "#191659",
+        "metadata": []
+    }, {
+        "title": "Aprovado",
+        "powerups": {},
+        "color": "#F2B705",
+        "metadata": []
+    }]
+}]

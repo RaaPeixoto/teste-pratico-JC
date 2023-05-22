@@ -1,0 +1,140 @@
+.geral {
+    position: relative;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.geral h1 {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    font-family: 'Bold';
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.tabela_time {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.tabela_time .linha {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    padding: 20px;
+    border-bottom: 1px solid var(--linecolor);
+    border-top: 1px solid var(--linecolor);
+    margin-bottom: -1px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tabela_time .linha:hover {
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    border: 1px solid transparent;
+    z-index: 9999;
+}
+
+.tabela_time .linha.head:hover {
+    box-shadow: none;
+}
+
+.tabela_time .linha td,
+.tabela_time .linha th {
+    text-align: left;
+}
+
+.tabela_time .linha.head {
+    border: 0;
+}
+
+.tabela_time .linha.head th {
+    font-weight: 900;
+    font-size: 10px;
+}
+
+.geral button {
+    text-align: center;
+    width: 190px;
+    background-color: var(--blue);
+    color: white;
+}
+
+.geral .header {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button.circulo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+    margin: 5px;
+    background-color: #e3e3e3;
+    color: var(--black);
+}
+
+button.circulo.ativo {
+    background-color: var(--blue);
+    color: white;
+    font-weight: 800;
+}
+
+.icone {
+    position: relative;
+    float: left;
+    padding: 0px 15px;
+}
+
+.time_vazio {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    background-image: url(../img/icone_vazado.svg);
+    background-position: center;
+    background-size: 260px;
+    background-repeat: no-repeat;
+}
+
+.contentArquivo {
+    width: 100%;
+}
+
+#search_card_arquived {
+    background-color: var(--branco);
+    color: var(--black);
+    margin-bottom: 10px;
+}

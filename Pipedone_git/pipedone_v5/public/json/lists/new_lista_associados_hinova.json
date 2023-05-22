@@ -1,0 +1,100 @@
+{
+    "title": "Associados",
+    "meta": [{
+            "id": "jknj3j3",
+            "campo": "nome",
+            "type": "text",
+            "position": 1
+        },
+        {
+            "id": "hiug33d",
+            "campo": "cpf",
+            "type": "cpf",
+            "position": 2
+        },
+        {
+            "id": "garcca",
+            "campo": "rg",
+            "type": "text",
+            "position": 3
+        },
+        {
+            "id": "af42dvs",
+            "campo": "data_nascimento",
+            "type": "data",
+            "position": 4
+        },
+        {
+            "id": "a42gth56",
+            "campo": "telefone",
+            "type": "phone",
+            "position": 5
+        },
+        {
+            "id": "w4fq44",
+            "campo": "celular",
+            "type": "phone",
+            "position": 6
+        },
+        {
+            "id": "adfv4266",
+            "campo": "email",
+            "type": "text",
+            "position": 7
+        },
+        {
+            "id": "mmej7zxs",
+            "campo": "logradouro",
+            "type": "text",
+            "position": 8
+        },
+        {
+            "id": "joiuqy8",
+            "campo": "numero",
+            "type": "text",
+            "position": 9
+        },
+        {
+            "id": "a7mnneiop",
+            "campo": "complemento",
+            "type": "text",
+            "position": 10
+        },
+        {
+            "id": "nfejniuh",
+            "campo": "bairro",
+            "type": "text",
+            "position": 11
+        },
+        {
+            "id": "caennoide",
+            "campo": "cidade",
+            "type": "text",
+            "position": 12
+        },
+        {
+            "id": "jkopija990",
+            "campo": "estado",
+            "type": "text",
+            "position": 13
+        },
+        {
+            "id": "amnknb190",
+            "campo": "cep",
+            "type": "cep",
+            "position": 14
+        },
+        {
+            "id": "909ibni",
+            "campo": "dia_vencimento",
+            "type": "text",
+            "position": 15
+        },
+        {
+            "id": "098jbmbn",
+            "campo": "sexo",
+            "type": "text",
+            "position": 16
+        }
+    ]
+}

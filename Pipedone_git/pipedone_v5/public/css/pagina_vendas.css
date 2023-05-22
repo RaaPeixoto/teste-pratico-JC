@@ -1,0 +1,557 @@
+.content {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+div.dobra {
+    position: relative;
+    width: 100%;
+    padding: 40px 20px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    top: 50px;
+}
+
+div.dobra h2 {
+    font-size: 32px;
+    line-height: 36px;
+    font-family: 'Black';
+    width: 100%;
+    text-align: center;
+}
+
+div.dobra#hero {
+    margin-top: 120px;
+    padding: 10px 10px;
+}
+
+div.dobra#hero h1 {
+    max-width: 700px;
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Black';
+    color: var(--text);
+    line-height: 40px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+div.dobra#hero p {
+    width: 100%;
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 26px;
+}
+
+div.dobra#hero img {
+    width: 100%;
+    max-width: 800px;
+    box-shadow: var(--shadow);
+    border-radius: 21px;
+    border: 10px solid var(--offblue);
+    margin-bottom: -120px;
+}
+
+div.dobra#hero button {
+    padding: 14px 26px;
+    margin-bottom: 10px;
+    background-color: var(--blue);
+    color: white;
+    font-family: 'Bold';
+    font-size: 16px;
+    border-radius: 50px;
+    border: 0;
+    height: 60px;
+    max-height: 60px;
+    cursor: pointer;
+    border-bottom: 4px solid #1f45cf;
+}
+
+div.dobra#hero span {
+    color: var(--blackgray);
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+
+div#conheca {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    background-color: var(--cinza);
+}
+
+div#conheca h2 {
+    width: 400px;
+    text-align: left;
+    font-size: 54px;
+    font-family: 'black';
+    line-height: 62px;
+}
+
+div#conheca .textos {
+    width: 400px;
+}
+
+div#conheca p {
+    padding: 10px;
+}
+
+div#depoimentos {
+    position: relative;
+    width: 100%;
+    background-color: var(--offblueshadow); 
+}
+
+div#depoimentos h2 {
+    padding: 20px;
+    font-size: 32px;
+    line-height: 34px;
+    text-align: center;
+    font-family: 'black';
+}
+
+div#depoimentos .block_texto {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: stretch;
+}
+
+div#depoimentos .block_texto .texto_voz {
+    position: relative;
+    background-color: var(--offblue);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    float: left;
+}
+
+div#depoimentos .block_texto .texto_voz div.nome {
+    position: relative;
+    margin-top: 20px;
+    color: var(--blue);
+}
+
+div#depoimentos .block_texto .texto_voz span {
+    color: var(--blackgray);
+    font-size: 12px;
+}
+
+div.ferramentas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 40px 0px;
+}
+
+div.ferramentas img {
+    height: 480px;
+    margin-right: 20px;
+}
+
+div.ferramentas p {
+    width: 300px;
+    font-size: 16px;
+}
+
+div#tudo_sobre_card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#tudo_sobre_card img {
+    margin-right: 0px;
+    max-width: 460px;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+#tudo_sobre_card .texto {
+    max-width: 320px;
+    margin-bottom: 20px;
+}
+
+#tudo_sobre_card .texto p {}
+
+#tudo_sobre_card .texto ul {
+    padding-left: 27px;
+    margin-bottom: 27px;
+}
+
+#tudo_sobre_card .texto ul li {
+    color: var(--blackgray);
+    font-size: 16px;
+    list-style-image: url(../img/checked.png);
+    padding: 10px;
+}
+
+#tudo_sobre_card .texto ul li.vazio {
+    color: var(--blackgray);
+    font-size: 16px;
+    list-style-image: url(../img/unchecked.svg);
+    padding: 10px;
+}
+
+div#relatorios {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div#relatorios .texto {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+div#relatorios .texto p {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+div#relatorios img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    height: auto;
+}
+
+div#planos {
+    background-color: var(--offblue);
+}
+
+div#planos h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+div#planos h2 .containerplanos {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.plano {
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.containerplanos {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+div#planos .containerplanos .plano h4 {
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-bottom: 0px;
+}
+
+div#planos .containerplanos .plano h1 {
+    font-size: 32px;
+    font-family: 'bold';
+    margin-bottom: 20px;
+    margin-top: 26px;
+    line-height: 20px;
+    text-align: center;
+}
+
+div#planos .containerplanos .plano span {
+    color: var(--blackgray);
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+
+div#planos .containerplanos .plano button {
+    padding: 10px;
+    background-color: var(--blue);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    border: 0;
+    margin-bottom: 20px;
+    height: 48px;
+    /* border-bottom: 3px solid #1d358b; */
+    font-family: 'bold';
+}
+
+div#planos .containerplanos .plano p {
+    text-align: center;
+    font-size: 12px;
+    color: var(--blackgray);
+}
+
+div#planos .containerplanos .plano ul {
+    padding-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: var(--blackgray);
+    padding: 0px;
+    padding-left: 40px;
+    /* background-color: var(--cinza); */
+    border-radius: 8px;
+}
+
+hr {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+div#planos .containerplanos .plano li {
+    color: var(--blackgray);
+    font-size: 12px;
+    list-style-image: url(../img/checked.png);
+    padding: 10px;
+    padding-left: 0px;
+    text-align: left;
+}
+
+div#planos .containerplanos .plano li.vazio {
+    color: var(--blackgray);
+    font-size: 12px;
+    list-style-image: url(../img/unchecked.svg);
+    padding: 10px;
+    padding-left: 0px;
+    text-align: left;
+}
+
+div#planos .containerplanos .plano#individual {
+    border: 2px solid var(--offgreen);
+}
+
+div#planos .containerplanos .plano#individual h4 {
+    background-color: var(--offgreen);
+}
+
+div#planos .containerplanos .plano#startup {
+    /* border: 2px solid var(--offblue); */
+}
+
+div#planos .containerplanos .plano#startup h4 {
+    background-color: var(--offblue);
+}
+
+div#planos .containerplanos .plano#empresarial {
+    /* border: 2px solid var(--blue); */
+}
+
+div#planos .containerplanos .plano h4 {
+    background-color: transparent;
+    color: var(--black);
+    font-size: 28px;
+    padding: 0;
+    font-family: 'black';
+}
+
+div#planos .containerplanos .plano#unlimited {
+    border: 2px solid var(--yellow);
+}
+
+div#planos .containerplanos .plano#unlimited h4 {
+    background-color: var(--yellow);
+    color: white;
+}
+
+div#faq {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div#faq h2 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+div#faq .pergunta {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    border: 1px solid var(--linecolor);
+    margin-top: -1px;
+    cursor: pointer;
+}
+
+div#faq .pergunta h1 {
+    font-size: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+div#faq .pergunta p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.formulario {
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+
+.formulario .elemento {
+    position: relative;
+    width: 100%;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div#planos .containerplanos .plano .formulario .elemento button {
+    padding: 0px;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 34px;
+    position: relative;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.formulario .elemento input {
+    height: 40px;
+    padding: 5px;
+    font-size: 18px;
+    font-family: 'Bold';
+    border: 0;
+    width: 50px;
+    text-align: center;
+    background-color: var(--offblue);
+    border-radius: 7px;
+    margin: 0px 5px;
+}
+
+.formulario .elemento label {
+    margin-bottom: 16px;
+    font-family: 'Bold';
+}
+
+.formulario .elemento .seletores {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+select#frequencia {
+    width: 200px;
+    float: left;
+    margin-bottom: 20px;
+    border: none;
+    overflow: hidden;
+    height: 37px;
+    border-radius: 5px;
+}
+
+select#frequencia option {
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--cinza);
+    padding: 10px;
+    /* margin: 5px; */
+    font-family: 'Bold';
+}
+
+select#frequencia option.ativo {
+    background-color: var(--blue);
+    color: var(--branco);
+}
+
+.oculto {
+    display: none;
+}
+
+.sanfona {}
+
+.sanfona label {
+    position: relative;
+    width: 100%;
+    float: left;
+    padding: 20px;
+    background-color: var(--cinza);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-family: 'Bold';
+}
+
+.sanfona label input {}
+
+div#planos .containerplanos .plano button.back {
+    background-color: var(--cinza);
+    color: var(--black);
+}

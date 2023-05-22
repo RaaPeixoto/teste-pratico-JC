@@ -1,0 +1,47 @@
+<h1>Teste de integração</h1>
+
+<button onclick="testar()">Testar</button>
+
+<div class="result"></div>
+
+<script>
+
+    async function testar(){
+        var token = "f7710a744aed175cc9f9f087af";
+        var pipe_id = 200788;
+        var item_id = "";
+        var creator_id = "";
+        var title = "Olá mundo!";
+        var values = [
+            {
+                "campName": "Nome",
+                "value": "John Lenon Melo de Oliveira",
+            },
+            {
+                "campName": "Email",
+                "value": "johnmeloag@gmail.com",
+            }
+        ];
+
+        
+
+        var teste = await axios.post('/public-api/card/create',{
+            token: token,
+            pipe_id: pipe_id,
+            item_id: item_id,
+            creator_id: creator_id,
+            title: title,
+            values: values,
+        })
+
+        if(teste.status != 200){
+            alert(teste.data);
+            return;
+        }
+
+        $('.result').text(teste.data)
+        console.log(teste.data);
+
+    }
+</script>
+

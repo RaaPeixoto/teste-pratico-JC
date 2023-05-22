@@ -1,0 +1,356 @@
+.creater {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    max-height: 100%;
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.elementos {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    border-right: 1px solid var(--linecolor);
+    left: 70%;
+    padding: 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+}
+
+.container {
+    position: relative;
+    padding: 10px;
+    background-color: var(--cinza);
+    border-radius: 7px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.container input[type="url"] {
+    position: relative;
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 0;
+    border-radius: 50px;
+    height: 44px;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: var(--branco);
+    color: black;
+    text-align: left;
+    padding: 12px;
+    font-size: 12px;
+    padding-right: 83px;
+    background-image: url(../img/copiar.svg);
+    background-position: 96%;
+    background-repeat: no-repeat;
+    background-size: 72px;
+    margin-top: 10px;
+}
+
+.elementos h2 {
+    font-size: 18px;
+}
+
+.elementos p {
+    font-size: 12px;
+}
+
+.elements {
+    margin-top: 10px;
+}
+
+#fechar {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    top: 10px;
+    background-color: var(--blueshadow);
+    color: var(--branco);
+    padding: 11px;
+    z-index: 9999;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.formulario {
+    position: absolute;
+    width: 70%;
+    left: 0%;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    background-image: linear-gradient(rgba(36, 28, 21, .1) 1px, transparent 0), linear-gradient(90deg, rgba(36, 28, 21, .1) 1px, transparent 0);
+    background-size: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cabeca {
+    width: 80%;
+    background-color: var(--branco);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px -3px black;
+    border-top: 3px solid black;
+}
+
+div.elemento {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--cinza);
+    margin-bottom: 10px;
+    border-radius: 7px;
+    height: 40px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: grab;
+}
+
+i {
+    margin-right: 5px;
+    margin-bottom: -2px;
+}
+
+.temas {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+    background-color: var(--offblue);
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+div#black {
+    background-color: var(--black);
+}
+
+div#verde {
+    background-color: var(--lGreen);
+}
+
+div#amarelo {
+    background-color: var(--lYellow);
+}
+
+div#azul {
+    background-color: var(--blueshadow);
+}
+
+div#vermelho {
+    background-color: var(--lRed);
+}
+
+div#roxo {
+    background-color: var(--roxo);
+}
+
+.color.ativo {
+    border: 3px double var(--black);
+}
+
+div.drop {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px dashed var(--black);
+    color: var(--black);
+    transition: 0.2s;
+    border-radius: 5px;
+    text-align: center;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.creater hr {
+    margin-top: 16px;
+    margin-bottom: 22px;
+    opacity: 0.5;
+}
+
+button#salvarForm {
+    position: relative;
+    padding: 10px 24px;
+    background-color: var(--blue);
+    color: white;
+    font-size: 16px;
+    font-family: 'Bold';
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 999;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.divElemento {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    transition: 0.2s;
+    padding: 10px;
+    background-color: var(--cinza);
+    z-index: 90;
+}
+
+.divElemento i {
+    font-size: 12px;
+    cursor: pointer;
+    display: none;
+}
+
+.divElemento:hover i {
+    display: block;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 9px;
+    background-color: var(--branco);
+    border: 0;
+    border-radius: 5px;
+    cursor: text;
+}
+
+.divElemento div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.divElemento h2,
+.divElemento p {
+    min-width: 80%;
+}
+
+button.text {
+    padding: 10px;
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--branco);
+    background-color: var(--blueshadow);
+    font-family: 'Bold';
+}
+
+input[type="radio"] {
+    color: var(--text);
+    padding: 5px;
+    margin: 11px 0px;
+    margin-right: 10px;
+}
+
+label.new {
+    cursor: pointer;
+    margin-top: 10px;
+    color: var(--blue);
+    font-size: 12px;
+}
+
+label {
+    min-width: 80%;
+    padding: 5px;
+    transition: 0.2s;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+label:hover {
+    border: 1px solid var(--linecolor);
+}
+
+div.label {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.2s;
+    border-radius: 7px;
+}
+
+input[type="number"],
+input[type="date"],
+input[type="time"] {
+    padding: 10px;
+    border: 0;
+    background-color: var(--branco);
+    border-radius: 5px;
+}
+
+.eleLista label {
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: var(--branco);
+    border-radius: 5px;
+}

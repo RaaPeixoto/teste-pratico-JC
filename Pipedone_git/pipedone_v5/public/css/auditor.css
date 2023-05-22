@@ -1,0 +1,89 @@
+.document {
+    margin-top: 50px;
+    padding: 20px;
+    height: auto;
+    width: 100%;
+    background-color: var(--cinza);
+    height: auto;
+    overflow: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.document .pdf {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    margin-top: 10px;
+}
+
+.preview_pdf {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.assinadores {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.assinadores .assinador {
+    background-color: var(--branco);
+    padding: 20px;
+    width: auto;
+    max-width: 800px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.assinadores .assinador img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.assinadores .assinador .texto {}
+
+.assinadores .assinador .texto h2 {
+    font-size: 18px;
+}
+
+.assinadores .assinador .texto span {}
+
+.assinadores .assinador span.data {
+    font-size: 12px;
+}
+
+h1 {
+    width: 100%;
+    max-width: 800px;
+    font-size: 18px;
+}

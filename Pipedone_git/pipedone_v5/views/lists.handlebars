@@ -1,0 +1,47 @@
+{{>header}}
+<link rel="stylesheet" href="/css/home.css">
+    {{!-- <div class="boasvindas">
+        <div class="bemvindo">
+            <img src="/img/robo.png" alt="Sorria!">
+            <p><b id="nome_usuario">Usuário</b>, <span id="mensagem_motivacional">vamos desbravar o mundo?</span></p>
+        </div>
+        <input type="search"  onkeyup="busca($(this), '.notification_1')" id="pesquisa_topo" placeholder="Pesquisar Pipes...">
+    </div> --}}
+
+    {{!-- 
+    <div class="atualizacoes">
+        <h1>Feed</h1>
+        <div id="lista_atualizacoes">
+            <div class="notification_1 vazio">
+                <img src="/img/like.svg" alt="">
+                <h4>Tudo limpo!</h4>
+            </div>            
+            <div class="notification_1">
+                <img src="/img/like.svg" alt="">
+                <h4>Deixem a sala limpa, por favor!!</h4>
+            </div>
+        </div>
+    </div> 
+    --}}
+{{!-- 
+    <div class="pipes">
+        <h1>Pipes</h1>
+        <div id="lista_pipes" class="dragscroll"></div>
+    </div> --}}
+
+    <div class="head" style="background-color: var(--offverde)">
+        <h1>Listas</h1>
+        <input type="search"  onkeyup="busca($(this), '.notification_1')" id="pesquisa_topo" placeholder="Pesquisar listas...">
+    </div>
+    <div class="listas">
+        <div id="lista_listas" class="dragscroll"></div>
+    </div>
+    
+
+<script async src="/js/lists.js"></script>
+
+<script>
+    $(`header#geral .ferramentas .pipes_conectados,header#geral #conexoes`).remove()
+    $(`.menuInicial button`).removeClass(`ativo`);
+    $(`#menu_Listas`).addClass(`ativo`);
+</script>

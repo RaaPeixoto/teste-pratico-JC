@@ -1,0 +1,15 @@
+[{
+    "id": "hinova_cotacao",
+    "title": "Cotação Hinova",
+    "photo": "/img/fotos/hinova.png",
+    "description": "Monte cotações puxando diretamente da Hinova e gere orçamentos com valores da sua tabela.",
+    "requisits": []
+}, {
+    "id": "hinova_sincronismo_associado",
+    "title": "Hinova associado",
+    "photo": "/img/fotos/hinova.png",
+    "description": "Sincronize os dados do card com o SGA da Hinova.",
+    "requisits": [
+        { "lists": ["new_lista_associados_hinova"] }
+    ]
+}]

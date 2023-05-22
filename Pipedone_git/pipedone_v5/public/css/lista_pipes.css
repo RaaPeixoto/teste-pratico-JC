@@ -1,0 +1,143 @@
+.geral {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 100px;
+}
+
+.geral .linedrop {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    max-height: 50px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    border: 1px solid var(--linecolor);
+}
+
+.geral .linedrop h4 {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    position: relative;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.geral .linedrop .botoes {}
+
+.geral .linedrop .botoes span {
+    font-size: 12px;
+}
+
+.geral .linedrop .botoes button {
+    font-size: 10px;
+    height: 26px;
+    width: 85px;
+    padding: 0;
+    cursor: pointer;
+}
+
+table {
+    position: relative;
+    width: 100%;
+    background-color: var(--branco);
+    margin-bottom: 20px;
+    max-width: 1000px;
+    border: 0;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+
+table thead {
+    padding: 0px;
+    margin: 0;
+}
+
+table thead tr {}
+
+table thead tr th {
+    height: 50px;
+    background-color: #f3f5fa;
+    /*var(--offblue)*/
+    color: black;
+    text-align: left;
+    padding: 10px;
+    font-size: 12px;
+    border: 0;
+    margin: 0;
+}
+
+table tbody {}
+
+table tbody tr {}
+
+table tbody tr td {
+    background-color: var(--branco);
+    padding: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--linecolor);
+    font-size: 12px;
+    transition: 0.2s;
+    padding: 10px;
+    min-height: 40px;
+}
+
+table tbody tr:hover td {
+    background-color: var(--offblue);
+}
+
+div.cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+div.person {
+    position: relative;
+    width: auto;
+    padding: 5px 10px;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+    color: var(--branco);
+}
+
+@media (max-width: 500px) {
+    div.cards {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+        /* overflow: auto; */
+        height: auto;
+    }
+}

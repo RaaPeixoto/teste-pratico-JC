@@ -1,0 +1,737 @@
+{{>header}}
+<link rel="stylesheet" href="/css/pipe.css">
+
+<script src="/lib/jspdf/pdf.js"></script>
+<script src="/lib/jspdf/pdf.sandbox.js"></script>
+<script src="/lib/js_pdf/jspdf.js"></script>
+<script src="/lib/html2canvas.js"></script>
+<script src="/lib/qrcode.js"></script>
+<script src="/lib/jspdf/pdf.worker.js"></script>
+<script src="/lib/ckeditor/ckeditor.js"></script>
+
+<script>
+
+    const pipe = JSON.parse('{{{pipe}}}');
+    console.log("pipe");
+    console.log(pipe);
+    const card_id = '{{card_id}}';
+    
+</script> 
+
+<script>
+
+async function listarPipesInMenu() {
+
+    const listaPipes = await axios.get(`/api/pipe/listar`)
+
+    if (listaPipes.status != 200) {
+        //error('Ops! Não conseguimos encontrar pipes cadastrados')
+        return;
+    }
+
+    const pipes = listaPipes.data;
+
+    // console.log(pipes)
+
+    $('.outrospipes').html('Carregando...')
+
+    var divspipes = `<i onclick="closeOutrosPipes()" class="close fi fi-rr-arrow-small-left"></i>`;
+    divspipes += `<h2>Outros pipes</h2>`;
+    divspipes += `<input type="search" name="busca_pipe" id="busca_pipe" placeholder="Pesquisar" onkeyup="busca($(this), '.linkPipe')">`;
+    for (let i = 0; i < pipes.length; i++) {
+
+        divspipes += `<a class="linkPipe" href="/pipe/${pipes[i].id}" >`;
+        divspipes += `<div class="pipeMenu" id="pipe_${pipes[i].id}" >`;
+        divspipes += `<i  class="fi fi-rr-apps"></i>`
+        divspipes += `${pipes[i].title}`;
+        divspipes += `</div>`;
+        divspipes += `</a>`;
+
+    }
+    $('.outrospipes').html(divspipes);
+
+}
+
+function openOutrosPipes(){
+
+    listarPipesInMenu();
+
+    $('.outrospipes').animate({
+        left: `0px`
+    },300);
+
+}
+
+function closeOutrosPipes(){
+    $('.outrospipes').animate({
+        left: `-100%`
+    },300);
+}
+
+</script>
+
+<header class="sub">
+    <div class="sub-menu">
+
+        {{!-- <button class="btmCircular" onclick="openNewCard()">+ Novo Card</button> --}}
+        <button class="menu" onclick="openOutrosPipes()">
+            <i class="fi fi-rr-menu-burger"></i>
+        </button>
+
+        <button id="sub-menu" class="menu ativo" onclick="setViewWorkSpace('kanban')">
+            <i class="fi fi-rr-apps"></i> Kanban <button class="change_view"><i class="fi fi-rr-angle-small-down"
+                    onclick="$('#options-sub-menus').slideToggle(200)"></i></button>
+        </button>
+
+        <div id="options-sub-menus" class="minitoggle oculto" style="display: none;">
+
+            <button class="menu" onclick="setViewWorkSpace('kanban')"><i class="fi fi-rr-apps"></i>
+                Kanban</button>
+
+            <button class="menu" onclick="setViewWorkSpace('lista')"><i class="fi fi-rr-list"></i>
+                Lista</button> 
+
+            <button class="menu" onclick="setViewWorkSpace('sales')"><i class="fi fi-rr-comment-dollar"></i>
+                Vendas</button> 
+{{!-- 
+            <button class="menu" onclick="setViewWorkSpace('tasks')"><i class="fi fi-rr-list-check"></i>
+                Tarefas</button> --}}
+
+            {{!-- <button class="menu" onclick="setViewWorkSpace($(this), 'gantt')"><i class="fi fi-rr-grid-alt"></i>
+                Gantt</button> --}}
+        </div>
+
+
+        <button class="menu ocultaMobile"
+            onclick="$('.conteudo').load('/html/analisys.html');$(`.menusAlternativos`).slideUp(200);$('.menu').removeClass('ativo');$(this).addClass('ativo')"><i
+                class="fi fi-rr-stats"></i> Estatísticas</button>
+
+        <button class="menu ocultaMobile"
+            onclick="$('.conteudo').load('/html/arquivo.html');$(`.menusAlternativos`).slideUp(200);$('.menu').removeClass('ativo');$(this).addClass('ativo')"><i
+                class="fi fi-rr-folder"></i> Cards arquivados</button>
+
+
+    </div>
+
+    <input type="search" name="busca_in_pipe" id="busca_in_pipe" placeholder="Pesquisa rápida"
+        onkeyup="busca($(this), '.card')">
+
+    <div class="sub-menu">
+
+
+        <button class="menu" id="import_cards_btm" onclick="openImportFromList()"><i class="fi fi-rr-folder-download"></i> Importar cards</button>
+
+        <button class="menu ocultaMobile" id="filtrosDoPipe" onclick="$('.filtros').slideToggle(100)"><i
+                class="fi fi-rr-filters"></i> Filtros</button>
+
+        <button class="menu ocultaMobile" id="filtrosDoPipe" onclick="openExportDados()"><i
+                class="fi fi-rr-file-spreadsheet"></i> Exportar</button>
+
+        <button class="menu ocultaMobile" onclick="toggleFullScreenInPipe()"><i id="fullScreen"
+                class="fi fi-rr-expand-arrows-alt"></i> Ampliar</button>
+
+        <button class="menu" onclick="openAjustes()"><i class="fi fi-rr-settings-sliders"></i> Ajustes</button>
+
+    </div>
+
+</header>
+
+<section class="outrospipes"></section>
+
+
+
+<section class="conteudo">Carregando...</section>
+
+<div class="menusAlternativos filtros" style="display:none" onmouseleave="$('.filtros').slideUp(100)">
+
+    <h5>Filtrar cards</h5>
+    <hr>
+    <h4>Por etiqueta</h4>
+    <div class="elementsFiltros filtro_etiquetas"></div>
+
+    <h4>Por pessoas</h4>
+    <div class="elementsFiltros filtro_pessoas"></div>
+
+    <hr>
+
+    <button class="btm_filtro" onclick="clearFilter()">Limpar Filtros</button>
+
+</div>
+
+<div class="menusAlternativos powerups">Carregando...</div>
+<div class="menusAlternativos novo_card">Carregando...</div>
+<div class="menusAlternativos settings">Carregando...</div>
+
+<div class="notify"></div>
+
+<script src="/js/pipe.js"></script>
+
+<script>
+
+    if(pipe.list_id.length == 0 || pipe.list_id[0] == null){
+        $(`#import_cards_btm`).hide();
+    }
+
+    async function openImportFromList() {
+
+        $('body').append('<div class="modal" id="exportDados"></div>');
+        $('#exportDados').load('/html/add_item_list.html');
+        $('#exportDados').siblings().css('filter', 'blur(4px)');
+
+    }
+
+    async function closeImportFromList() {
+
+        $('#exportDados').siblings().css('filter', 'none');
+        $('#exportDados').remove();
+
+    }
+
+
+    $(`.outrospipes`).mouseleave(()=>{
+        closeOutrosPipes();
+    })
+
+    function openAjustes() {
+        $(`.menusAlternativos`).slideUp(200);
+        $('.settings').fadeIn(200).load(`/html/settings.html`).siblings().css('filter', 'blur(4px)');
+    }
+
+    function openExportDados() {
+        $('body').append('<div class="modal" id="exportDados"></div>');
+        $('#exportDados').load('/html/export_dados.html');
+        $('#exportDados').siblings().css('filter', 'blur(4px)');
+    }
+
+    function closeExportDados() {
+        $('#exportDados').siblings().css('filter', 'none');
+        $('#exportDados').remove();
+    }
+
+    //openExportDados();
+
+    async function setViewWorkSpace(type) {
+        $(`#options-sub-menus`).slideUp(200);
+
+        switch (type) {
+            case "kanban":
+                listarSteps(pipe.id);
+                $('#sub-menu').html(`<i class="fi fi-rr-apps"></i> Kanban`).attr('onclick', "setViewWorkSpace('kanban')").addClass('ativo');
+                break;
+
+            case "lista":
+                $('.conteudo').load('/html/lista_pipes.html');
+                $('#sub-menu').html(`<i class="fi fi-rr-list"></i> Lista`).attr('onclick', "setViewWorkSpace('lista')").addClass('ativo');
+                break;
+
+            case "gantt":
+                $('.conteudo').html('Gráfico de Gantt');
+                $('#sub-menu').html(`<i class="fi fi-rr-grid-alt"></i> Gantt`).attr('onclick', "setViewWorkSpace('gantt')").addClass('ativo');
+                break;
+
+            case "sales":
+                $('.conteudo').load('/html/sales.html');
+                $('#sub-menu').html(`<i class="fi fi-rr-comment-dollar"></i> Vendas`).attr('onclick', "setViewWorkSpace('sales')").addClass('ativo');
+                break;
+
+            case "tasks":
+                $('.conteudo').load('/html/tarefas.html');
+
+                $('#sub-menu').html(`<i class="fi fi-rr-list-check"></i> Tarefas`).attr('onclick', "setViewWorkSpace('tasks')").addClass('ativo');
+                break;
+        }
+
+        if (!pipe.metadata.viewPrefer) {
+            pipe.metadata['viewPrefer'] = "";
+        }
+
+        pipe.metadata.viewPrefer = type;
+
+        console.log('pipe.metadata')
+        console.log(pipe.metadata)
+
+        var update = await axios.put(`/api/pipe/update/metadata`, {
+            id: pipe.id,
+            metadata: pipe.metadata
+        });
+
+        if (update.status != 200) {
+            error('Ops, ocorreu um erro!');
+            return;
+        }
+
+    }
+
+    function toggleFullScreenInPipe() {
+        if (!document.fullscreenElement) {
+
+            document.documentElement.requestFullscreen();
+            $('.conteudo').addClass('fullscrenn');
+            $('header').fadeOut(200);
+
+        } else if (document.exitFullscreen) {
+
+            document.exitFullscreen();
+            $('.conteudo').removeClass('fullscrenn');
+            $('header').fadeIn(200);
+
+        }
+    }
+
+    $(`.menuInicial`).hide()
+
+    if (card_id) {
+        openCard(card_id);
+    }
+
+    var socket = io.connect();
+    /*
+    {!--
+                socket.on("proposta_aceita_refresh", (proposta) => {
+
+                    notifyMe(`<i class="fi fi-rr-bullseye-pointer"></i> A proposta foi aceita por ${proposta.metadata.client}`);
+
+                    var powers = pipe.metadata.powerups.filter(item => item.condition.id == "proposta_aceita");
+
+                    if (powers.length > 0) {
+
+                        for (power of powers) {
+                            activePowerUp(proposta.card_id, power);
+                        }
+
+                    }
+
+                });
+
+            socket.on("fotos_registradas_refresh", async (registro) => {
+
+                var card = await axios.get(`/api/card/${registro.card_id}`)
+                var metaCard = JSON.parse(card.data.metadata)
+
+                notifyMe(`<i class="fi fi-rr-camera"></i> Fotos foram registradas no card ${metaCard.title}`);
+
+                var powers = pipe.metadata.powerups.filter(item => item.condition.id == "fotos_registradas");
+
+                if (powers.length > 0) {
+
+                    for (power of powers) {
+                        activePowerUp(registro.card_id, power);
+                    }
+
+                }
+
+            });
+
+            socket.on("documento_assinado_refresh", async (registro) => {
+
+                var card = await axios.get(`/api/card/${registro.card_id}`)
+                var metaCard = JSON.parse(card.data.metadata)
+
+                notifyMe(`<i class="fi fi-rr-document-signed"></i> Uma pessoa assinou um documento no card ${metaCard.title}`);
+
+                var powers = pipe.metadata.powerups.filter(item => item.condition.id == "documento_assinado");
+
+                if (powers.length > 0) {
+
+                    for (power of powers) {
+                        activePowerUp(registro.card_id, power);
+                    }
+
+                }
+
+            });
+            --}
+    }
+    */
+
+    if (!pipe.metadata || pipe.metadata.length < 4 ) {
+        var NewMeta = {
+            powerups: [],
+            tags: [],
+            viewPrefer: "",
+        }
+
+        console.log(NewMeta)
+        axios.put(`/api/pipe/update/metadata`, {
+            id: pipe.id,
+            metadata: NewMeta
+        }).then((sucess) => {
+
+        }).catch((error) => {
+
+        })
+    }
+
+    $(`#geral .menu`).remove();
+
+    socket.on("refresh_cards", async (card) => {
+
+        if (card.organization_id != usuario.organization_id) {
+            return;
+        }
+
+        if (card.usuario == usuario.id) {
+            return;
+        }
+
+        if (pipe.id != card.to.pipe) {
+            $(`#card_${card.to.card}`).remove()
+            return;
+        }
+
+        if (card.to.card != "") {
+
+            setCountCardsInSteps(card.to.pipe_id);
+            var getCard = await axios.get(`/api/card/${card.to.card}`)
+
+            var cardCadastrado = getCard.data;
+            $(`#card_${cardCadastrado.id}`).remove();
+
+            var meta = JSON.parse(cardCadastrado.metadata);
+
+            var data = new Date(cardCadastrado.updatedAt);
+
+            var dia = data.getDate() + '/' + data.getMonth() + '/' + data.getFullYear()
+            var hora = data.getHours() + ':' + data.getMinutes();
+
+            var ultimaAtualizacao = `Atualizado em ${dia} às ${hora}`;
+
+            var cartao = `<div class='card' onclick="openCard(${cardCadastrado.id})" draggable="true"  id="card_${cardCadastrado.id}"><div class="tags"></div><h4>${meta.title}</h4><span class="ultima">${ultimaAtualizacao}</span></div>`;
+
+            $(`#step_${card.to.step} .body`).prepend(cartao);
+
+            if (meta.tags && meta.tags.length > 0) {
+
+                for (let i = 0; i < meta.tags.length; i++) {
+                    const tag = meta.tags[i];
+
+                    var elementoTag = `<div class="person" id="${tag.id}" style="background-color:${tag.color}">`;
+                    elementoTag += `<label>${tag.name}</label>`;
+                    elementoTag += `</div>`;
+
+                    $(`#card_${cardCadastrado.id} .tags`).append(elementoTag);
+                }
+
+            }
+
+            playSound();
+
+            let cardDrop = document.querySelectorAll('.card');
+            cardDrop.forEach(function (item) {
+                item.addEventListener('dragstart', DragStart);
+                item.addEventListener('dragend', DragEnd);
+                item.addEventListener('dragover', DragOver);
+                item.addEventListener('dragenter', DragEnter);
+            });
+
+        }
+
+    });
+
+    function emitCard(metadata) {
+        metadata['organization_id'] = usuario.organization_id;
+        socket.emit("move_card", metadata, (card) => {});
+    }
+
+    function notifyMe(msg) {
+
+        var notification = `<div class="notification" title="Clique para fechar" onclick="$(this).slideUp(200)">${msg}</div>`;
+
+        playSound();
+
+        $('.notify')
+            .append(notification)
+            .slideDown(200);
+
+    }
+
+    async function novoCard(step_id) {
+
+        var card = `<div class='card' id="new_card"><textarea placeholder="Digite um título para este card..."></textarea><br><span id="cancelarCard">Cancelar</span></div>`;
+
+        $(`#step_${step_id} .body`).prepend(card);
+
+        $(`#new_card textarea`).focus().keypress(async (e) => {
+
+            var code = (e.keyCode ? e.keyCode : e.which);
+
+            if (code == 13) {
+                e.preventDefault();
+                // //console.log('Faz alguma coisa agora...')
+
+                if (!pipe.list_id || pipe.list_id.length == 0 || pipe.list_id == null || pipe.list_id == 0 || pipe.list_id == '0') {
+
+                    var card = {
+                        title: $(`#new_card textarea`).val(),
+                        pipe_id: pipe.id,
+                        step_id: step_id
+                    }
+
+                    criarCard(card);
+
+                } else {
+
+                    var item_id = await criarNovaLinha(pipe.list_id[0]);
+
+                    criarCardFromItemList(item_id.id, step_id);
+
+                }
+
+            }
+        });
+
+        $(`#cancelarCard`).click(() => {
+            $(`#new_card`).remove();
+        });
+
+        if (pipe.list_id && pipe.list_id.length != 0 && pipe.list_id != null && pipe.list_id != 0 && pipe.list_id != '0') {
+
+            $(`#new_card`).append(`<div class="list_itens"></div>`)
+
+            $(`#new_card textarea`).keyup(async () => {
+                var text = $(`#new_card textarea`).val();
+                if (text.length > 2) {
+                    var busca = await axios.post(`/api/itens/buscar/1`, {
+                        termo: text,
+                        list_id: pipe.list_id[0],
+                    });
+
+                    var itens = "";
+
+                    for (item of busca.data.rows) {
+
+                        var campos = item.metadata.sort((a, b) => {
+                            if (a.position > b.position) {
+                                return 1;
+                            }
+
+                            if (a.position < b.position) {
+                                return -1;
+                            }
+
+                            return 0;
+                        })
+
+                        itens += `<button onclick="criarCardFromItemList(${item.id}, ${step_id})">${campos[0].value}</button>`;
+
+                    }
+
+                    $(`#new_card .list_itens`).html(itens);
+
+                } else {
+                    $(`#new_card .list_itens`).html('');
+                }
+            });
+        }
+
+    }
+
+    async function criarNovaLinha(list_id) {
+
+        var text = $(`#new_card textarea`).val();
+        var getLista = await axios.get(`/api/list/${list_id}`);
+        var meta = getLista.data.metadata;
+
+        var linha = {
+            list_id: list_id,
+            lines: []
+        }
+
+        var position = 1;
+
+        for (campo of meta) {
+
+            var item = {
+                campo_id: campo.id,
+                value: "",
+                type: campo.type,
+                position: position,
+            };
+
+            linha.lines.push(item);
+
+            position++;
+
+        }
+
+        linha.lines[0].value = text;
+
+        var criarLinha = await axios.post(`/api/item/criar`, {
+            list: linha
+        });
+
+        if (criarLinha.status != 200) {
+            alert(sucess.data)
+            return;
+        };
+
+        return criarLinha.data;
+
+    }
+
+    async function criarCardFromItemList(item_id, step_id) {
+
+        var getItem = await axios.get(`/api/item/${item_id}`);
+
+        if (getItem.status != 200 || getItem.data == null) {
+            error("Desculpa, não encontramos o item da lista!");
+            return;
+        }
+
+        var getList = await axios.get(`/api/list/${getItem.data.list_id}`);
+
+        var itens = getItem.data.metadata.sort((a, b) => {
+
+            if (a.position > b.position) {
+                return 1;
+            }
+
+            if (a.position < b.position) {
+                return -1;
+            }
+
+            return 0;
+        })
+
+        var lists = getList.data.metadata.sort((a, b) => {
+
+            if (a.position > b.position) {
+                return 1;
+            }
+
+            if (a.position < b.position) {
+                return -1;
+            }
+
+            return 0;
+        })
+
+        var formulario = {
+            fields: [],
+            values: [],
+        }
+
+        for (item of itens) {
+
+            var field = {
+                id: item.campo_id,
+                value: item.value,
+            }
+
+            formulario.values.push(field);
+
+        }
+
+        for (list of lists) {
+
+            var value = {
+                id: list.id,
+                description: list.campo,
+                meta: {},
+                position: list.position,
+                type: list.type,
+            }
+
+            formulario.fields.push(value);
+
+        }
+
+        var card = {
+            title: getItem.data.metadata[0].value,
+            pipe_id: pipe.id,
+            step_id: step_id,
+            list_id: pipe.list_id[0],
+            item_id: item_id,
+            form: formulario
+        }
+
+        criarCard(card);
+
+    }
+
+    async function updateFormOfCardInList(card_id, list_id, item_id) {
+
+        var getItem = await axios.get(`/api/item/${item_id}`);
+        var getList = await axios.get(`/api/list/${list_id}`);
+        var getCard = await axios.get(`/api/card/${card_id}`);
+
+        var thisCard = getCard.data;
+        var metaCard = JSON.parse(getCard.data.metadata);
+
+        var itens = getItem.data.metadata.sort((a, b) => {
+
+            if (a.position > b.position) {
+                return 1;
+            }
+
+            if (a.position < b.position) {
+                return -1;
+            }
+
+            return 0;
+        })
+
+        var lists = getList.data.metadata.sort((a, b) => {
+
+            if (a.position > b.position) {
+                return 1;
+            }
+
+            if (a.position < b.position) {
+                return -1;
+            }
+
+            return 0;
+        })
+
+        var formulario = {
+            fields: [],
+            values: [],
+        }
+
+        for (item of itens) {
+
+            var field = {
+                id: item.campo_id,
+                value: item.value,
+            }
+
+            formulario.values.push(field);
+
+        }
+
+        for (list of lists) {
+
+            var value = {
+                id: list.id,
+                description: list.campo,
+                meta: {},
+                position: list.position,
+                type: list.type,
+            }
+
+            formulario.fields.push(value);
+
+        }
+
+        metaCard.form = formulario;
+
+        axios.put(`/api/card/update/metadata`, {
+            metadata: metaCard,
+            id: card_id
+        }).then((sucess) => {
+            if (!sucess.status == 200) {
+                alert(sucess.data)
+            }
+        }).catch((erro) => {
+            alert(erro);
+        })
+    }
+
+    if (pipe.metadata.viewPrefer && pipe.metadata.viewPrefer != null && pipe.metadata.viewPrefer != undefined && pipe.metadata.viewPrefer != "") {
+        setViewWorkSpace(pipe.metadata.viewPrefer);
+    }else{
+        setViewWorkSpace('kanban');
+    }
+
+</script>

@@ -1,0 +1,193 @@
+{{>header_inicial}}
+<link rel="stylesheet" href="/css/pagina_vendas.css">
+
+<div class="dobra" id="hero">
+    
+    <h1>CRIE, GERENCIE E AUTOMATIZE WORKFLOWS PARA SUA EMPRESA</h1>
+
+    <p>Nossa missão é ajudar sua empresa a ter sucesso através de fluxos de trabalho automatizados e eficientes por meio de uma plataforma no-code, rápida e super fácil de usar.</p>
+
+    {{!-- https://calendly.com/pipedone/30min --}}
+    <a href="https://www.pipedone.com/form/MQ">
+        <button>Solicite demonstração</button>
+    </a>
+
+    <span>Planos a partir de R$ 59,90/usuário</span>
+
+    <img src="/img/pipe.png" alt="">
+
+</div>
+
+<div class="dobra" id="conheca">
+    <h2>Muito prazer, Pipedone!</h2>
+
+    <div class="textos">
+        <p>O Pipedone foi desenhado para tornar o trabalho mais intuitivo, versátil e bem mais produtivo.</p>
+
+        <p>Com um sistema arrasta e solta e um conjunto incrível de ferramentas, o Pipedone é ideal para realizar tarefas, controlar os mais diversos processos e manter a conexão com toda a sua equipe.</p>
+        
+        <p>Adicione ações automatizadas e aproveite ainda mais seu tempo para fazer o que realmente importa.</p>
+    </div>
+</div>
+
+<div class="dobra" id="depoimentos">
+    <h2>Nossos clientes nos amam!<br>Sua empresa também vai!</h2>
+    <div class="block_texto">
+
+        <div class="texto_voz">
+            <p>"show, facilitou demais nossa vida, parabéns... ajudou 100% no precesso, agilizou nossa demanda, rapido e prático, achei top"</p>
+            <div class="nome">Alexandre Silva</div>
+            <span>Supervisor de vendas</span>
+        </div>
+
+        <div class="texto_voz">
+            <p>"Em meio da pandemia serviu de ótima ajuda para as nossas vendas,respeitando o distanciamento social."</p>
+            <div class="nome">Nathalia Américo</div>
+            <span>Vendas</span>
+        </div>
+
+        <div class="texto_voz">
+            <p>"A Plataforma é moderna e prática, realizar cadastro de aceite digital é auto explicativo, o que torna bastante interessante, quanto aos detalhes, os desenvolvedores estão sempre dispostos a ajustar da melhor forma."</p>
+            <div class="nome">Mariza Lopes</div>
+            <span>Vendas</span>
+        </div>
+
+        <div class="texto_voz">
+            <p>"Prático, fácil, importante e intuitivo! Estão de parabéns pela plataforma, tem nos ajudado muito!!!"</p>
+            <div class="nome">Adeycson Siebra</div>
+            <span>Supervisor de vendas</span>
+        </div>
+
+    </div>
+</div>
+
+<div class="dobra">
+
+    <div class="ferramentas" id="tudo_sobre_card">
+        <div class="texto">
+            <ul>
+                <li>Controle tarefas.</li>
+                <li>Registre informações.</li>
+                <li>Discuta com membros da equipe.</li>
+                <li>Envie documentos para assinatura.</li>
+                <li>Solicite fotos para vistorias ou fluxos de cadastro.</li>
+            </ul>
+            <p>Tudo isso <b>sem sair</b> da mesma página.</p>
+        </div>
+        <img src="/img/card.png" alt="">
+    </div>
+
+    <div class="ferramentas" id="">
+        <img src="/img/movimentos_card.png" alt="">
+        <p>Conecte todos os setores da sua empresa em um <b>único lugar</b>.<br><br>Nunca mais perca vendas ou qualquer outra informação por desorganização.</p>
+    </div>
+
+    <div class="ferramentas" id="assinar_documentos">
+        <div class="texto">
+            <p>Envie documentos para que seus clientes assinem onde eles estiverem.</p><br>
+            <p>Com nossa teconlogia de <b>registro facial</b>, permitir facilmente identificar quem assinou o documento.</p>
+        </div>
+        <img src="/img/selfe_sign.png" alt="">
+    </div>
+
+    <div class="ferramentas" id="relatorios">
+        <div class="texto">
+            <h2>Acompanhe a produtividade da sua equipe</h2>
+            <p>O Pipedone gera realatórios automatizadas por data e por membro da sua equipe.</p>
+        </div>
+        <img src="/img/relatorios_produtividade.png" alt="">
+    </div>
+
+</div>
+{{!-- 
+<div class="dobra" id="planos">
+    <h2>Um plano para cada<br>etapa do seu negócio!</h2>
+
+    <div class="containerplanos">
+
+        <div class="plano" id="startup">
+            <h4>Plano Empresarial</h4>
+            <ul>
+                <li>15 usuários inclusos</li>
+                <li>Novo usuário por R$ 19,00/mês</li>
+                <li>200 assinaturas digitais por mês</li>
+                <li>200 links captadores de fotos por mês</li>
+                <li>20 pipes</li>
+            </ul>
+            <h1>R$ 499<span>/mês</span></h1>
+            
+            <button  onclick="openPlan('empresarial')">Escolher plano</button>
+            <hr>
+            <p>Plano ideal para empresas que estão começando a escalar o negócio.</p>
+        </div>
+
+        <div class="plano" id="empresarial">
+            <h4>Plano Start</h4>
+            <ul>
+                <li>5 usuários inclusos</li>
+                <li>Novo usuário por R$ 29,00/mês</li>
+                <li>80 assinaturas digitais por mês</li>
+                <li>80 links captadores de fotos por mês</li>
+                <li>10 pipes</li>
+            </ul>
+            <h1>R$ 249<span>/mês</span></h1>
+            
+            <button onclick="openPlan('startup')">Escolher plano</button>
+            <hr>
+            <p>Plano ideal para pequenas empresas que tem baixo fluxo de assinaturas de contratos.</p>
+        </div>
+
+        <div class="plano" id="individual">
+            <h4>Plano Individual</h4>
+            <ul>
+                <li>1 usuário incluso</li>
+                <li>Novo usuário por R$ 49,00/mês</li>
+                <li>10 assinaturas digitais por mês</li>
+                <li>10 links captadores de fotos por mês</li>
+                <li>5 pipes</li>
+            </ul>
+            <h1>R$ 59<span>/mês</span></h1>
+            <button onclick="openPlan('individual')">Escolher plano</button>
+            <hr>
+            <p>Plano ideal para quem está no início de um negócio/projeto e já quer começar do jeito certo.</p>
+        </div>
+
+        <div class="plano" id="free">
+            <h4>Plano grátis</h4>
+
+            <ul>
+                <li>Apenas um usuário</li>
+                <li class="vazio">Sem usuários extras</li>
+                <li>1 assinaturas digitais por mês</li>
+                <li>1 links captadores de fotos por mês</li>
+                <li>1 pipe</li>
+            </ul>
+            
+            <button onclick="openPlan('free')">Escolher plano</button>
+            <p>Plano ideal para quem está começando e quer testar os recursos.</p>
+        </div>
+
+    </div>
+</div> --}}
+
+<div class="dobra" id="faq">
+    <h2>Perguntas frequentes</h2>
+    <div class="pergunta">
+        <h1 onclick="$(this).siblings('p').slideToggle(200)">Meus dados e dos meus clientes estão seguros?</h1>
+        <p style="display: none">Toda a comunicação do site é criptografada. Todo o acesso ao site é feito através de login e senha. Além de você ter todo o controle de permissão dos seus usuários.<br><br>Nada na internet é 100% seguro. Mas trabalhamos sempre com os sevidores mais seguros do mercado e com as melhores práticas para garantir o máximo de segurança possível.</p>
+    </div>    
+    <div class="pergunta">
+        <h1 onclick="$(this).siblings('p').slideToggle(200)">Posso trocar de plano? Quanto tempo dura o contrato?</h1>
+        <p style="display: none">É possível mudar de plano ou cancelar a qualquer hora. Porém, apenas as cobranças futuras serão canceladas. Os valores já pagos não serão estornados.</p>
+    </div>    
+    <div class="pergunta">
+        <h1 onclick="$(this).siblings('p').slideToggle(200)">O Pipedone vai enviar alguém para treinar minha equipe ou me ajudar na configuração do sistema?</h1>
+        <p style="display: none">Nosso sistema foi construído para que qualquer pessoa consiga sozinho configurar e já começar a usar. Porém, oferecemos um suporte a mais. Nossa equipe irá te ajudar a organizar os fluxos de trabalho bem como treinar e acompanhar sua equipe no que for preciso.</p>
+    </div>   
+    <div class="pergunta">
+        <h1 onclick="$(this).siblings('p').slideToggle(200)">Posso adicionar mais pessoas a minha equipe?</h1>
+        <p style="display: none">Sim! Será cobrado o valor correspondente ao plano por cada novo usuário.</p>
+    </div>
+</div>
+
+{{>footer_inicial}}

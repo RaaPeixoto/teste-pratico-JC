@@ -1,0 +1,338 @@
+.content {
+    padding: 20px;
+    padding-top: 60px;
+    transition: 0.3s;
+    overflow: auto;
+    background-color: var(--cinza);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.geral {
+    position: relative;
+    height: auto;
+    width: 100%;
+    padding: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+nav.sub-menu-count {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 200px;
+    background-color: var(--branco);
+    border: 1px solid var(--linecolor);
+    margin-right: -1px;
+}
+
+nav.sub-menu-count button {
+    padding: 16px 10px;
+    border: 0;
+    background-color: var(--branco);
+    /* border-radius: 50px; */
+    cursor: pointer;
+    /* margin: 3px; */
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid var(--linecolor);
+}
+
+nav.sub-menu-count button.ativo {
+    background-color: var(--blue);
+    color: white;
+    font-family: 'Bold';
+}
+
+nav.sub-menu-count h1 {
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+button#atualizar {
+    position: relative;
+    float: right;
+    padding: 10px 40px;
+    height: 55px;
+    background-color: var(--blue);
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    font-family: 'Bold';
+}
+
+.count-container a {
+    padding: 20px;
+    position: relative;
+    float: left;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+.count-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    border: 1px solid var(--linecolor);
+    background-color: var(--branco);
+    /* border-radius: 10px; */
+}
+
+.count-container h1 {
+    font-size: 20px;
+}
+
+.campo {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 12px 0px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--linecolor);
+    background-color: var(--cinza);
+    color: var(--black);
+    border-radius: 7px;
+    height: 50px;
+    font-size: 14px;
+}
+
+hr {
+    border: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--linecolor);
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.count-container h2 {
+    font-size: 16px;
+}
+
+.count-container label {
+    font-size: 12px;
+}
+
+div#autenticado {
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+div#autenticado .info {
+    color: var(--black);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+div#autenticado span {
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+img#fotoEmpresa {
+    position: relative;
+    width: 100%;
+    background-color: var(--cinza);
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 7px;
+}
+
+.divisor {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.plano {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--cinza);
+    border: 1px solid var(--linecolor);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.plano .texto span {
+    font-size: 12px;
+}
+
+button.link {
+    background-color: transparent;
+    border: none;
+    color: var(--blue);
+    text-decoration: underline;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.texto {
+    position: relative;
+    width: 40%;
+}
+
+.consumo {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    height: 116px;
+    padding: 10px;
+}
+
+.icones {
+    position: relative;
+    width: 45%;
+    height: auto;
+    float: left;
+    margin: 10px;
+}
+
+.icones i {
+    font-size: 12px;
+}
+
+.icones span {
+    font-size: 12px;
+}
+
+.icones a {
+    padding: 0;
+}
+
+table {
+    margin: 0px;
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    border-collapse: collapse;
+}
+
+table tr th {
+    padding: 10px;
+    width: auto;
+    text-align: left;
+    font-size: 12px;
+    background-color: var(--offblue);
+    color: var(--black);
+    border-radius: 0px;
+    font-family: 'Bold';
+    border: 1px solid var(--offblueshadow);
+}
+
+table tr th span {
+    font-family: 'Bold';
+    position: relative;
+    width: 100%;
+}
+
+table tbody tr td {
+    padding: 5px;
+    width: auto;
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 12px;
+    border: 1px solid var(--offblue);
+}
+
+.count-container table tbody tr td a {
+    font-size: 12px;
+    padding: 0;
+}
+
+@media (max-width: 530px) {
+    .content {
+        padding: 10px;
+        padding-top: 10px;
+        transition: 0.3s;
+        overflow: auto;
+        background-color: var(--cinza);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: center;
+        position: fixed;
+        top: 0px;
+        height: 90%;
+    }
+    .bemvindo {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0px 12px;
+    }
+    header {
+        position: fixed;
+        top: auto;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: var(--branco);
+        border-bottom: 0px;
+        border-top: 1px solid var(--linecolor);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        height: 10%;
+    }
+}

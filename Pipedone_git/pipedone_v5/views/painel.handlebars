@@ -1,0 +1,64 @@
+<script>
+    async function criarPlano(dados){
+        let plano = await axios.post(`/pagarme/planos`,{
+            valor: dados.valor,
+            periodo: dados.periodo,
+            nome: dados.nome,
+        })
+
+        salvarPlano(plano.data);
+    }
+
+    async function salvarPlano(dados){
+
+        let plano = await axios.post(`/api/plano/create`,{
+            plan_id: dados.id,
+            metadata: dados,
+            value: dados.amount,
+            status: 'active',
+        })
+
+        console.log(plano)
+        
+
+    }
+
+    var individual = {
+        valor: 5990,
+        periodo: 30,
+        nome: "Individual",
+    }
+
+    var startup = {
+        valor: 24990,
+        periodo: 30,
+        nome: "Start-up",
+    }
+
+    var empresarial = {
+        valor: 49990,
+        periodo: 30,
+        nome: "Empresarial",
+    }
+
+    var superbusiness = {
+        valor: 129790,
+        periodo: 30,
+        nome: "Super Business",
+    }
+
+    var teste = {
+        id: 0,
+        dados: '',
+        amount: 0,
+    }
+
+    salvarPlano(teste);
+    // criarPlano(empresarial);
+    // criarPlano(superbusiness);
+    // criarPlano(startup);
+
+</script>
+
+
+<div style="margin-left: -45%;left:50%;position: relative;width: 90%;padding:20px;background-color:#fafafa;height:auto;overflow: auto;"></div>

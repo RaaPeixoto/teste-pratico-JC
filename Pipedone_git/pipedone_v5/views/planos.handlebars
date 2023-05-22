@@ -1,0 +1,278 @@
+{{>header}}
+
+<link rel="stylesheet" href="/css/pagina_vendas.css">
+
+<div class="dobra" id="planos">
+
+    <div class="containerplanos">
+
+        <div class="plano" id="plano">
+            <h4>Detalhes do seu plano</h4>
+            {{!-- <br> --}}
+            <div class="formulario">
+
+                <div class="elemento">
+                    <label for="num_users">Frequência de pagamento:</label>
+                    <div class="seletores">
+                        <select id="frequencia" size="2">
+                            <option onclick="setFrequencia('mouth')" id="mouth" value="mouth" class="ativo" selected> Mensal</option>
+                            <option onclick="setFrequencia('year')" id="year" value="year">Anual</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="elemento">
+                    <label for="num_users">Usuários contratados:</label>
+                    <div class="seletores">
+                        <button onclick="minus('num_users')">-</button>
+                        <input type="tel" id="num_users" value="1" min="1" disabled>
+                        <button onclick="more('num_users')">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <ul>
+                <label style="margin-left: -25px;">Está incluso:</label>
+                <li><span id="assinaturas">20</span> assinaturas digitais por mês</li>
+                <li><span id="fotos">20</span> links captadores de fotos por mês</li>
+                <li><span id="pipes">5</span> pipes</li>
+            </ul>
+
+        </div>
+
+        <div class="plano" id="pagamento">
+            <h1 id="total">R$ 59<span>/mês</span><br><span>59 mensal por usuário</span></h1>
+            <input type="hidden" id="valorTotal" value="59">
+
+            <button onclick="verifyPaymentMethodAndRedirect()" id="botao_ir">Ir para pagamento</button>
+
+            <p>Pague por boleto ou cartão de crédito.</p>
+        </div>
+
+  
+    </div>
+
+</div>
+
+<script src="/js/planos.js"></script>
+<script>
+
+
+    async function cadastroGratuito() {
+        axios.post(`/pagarme/assinatura/gratis`).then((sucess) => {
+
+            location.href = "/bem-vindo";
+
+        }).catch((error) => {
+            console.error(error)
+            error(error)
+        });
+    }
+
+    function setFrequencia(frequencia) {
+        $('#frequencia option').removeClass('ativo');
+        $(`#${frequencia}`).addClass('ativo');
+
+        updateValue();
+    }
+
+    function more(campo_id) {
+        var campo = $(`#${campo_id}`);
+        var valorAtual = parseInt(campo.val());
+        var valorNovo = valorAtual + 1;
+
+        campo.val(valorNovo);
+
+        updateValue();
+    }
+
+    function minus(campo_id) {
+        var campo = $(`#${campo_id}`);
+        var minValue = campo.attr('min');
+        var valorAtual = parseInt(campo.val());
+        var valorNovo = valorAtual - 1;
+
+        if (valorNovo >= minValue) {
+            campo.val(valorNovo);
+        } else {
+            campo.val(minValue);
+        }
+
+        updateValue();
+    }
+
+    function retornaValueUser(qtd, periodo) {
+
+        var desconto = 20;
+
+        if (qtd < 6) {
+            if (periodo == 'mouth') {
+                return 59;
+            } else {
+                return 59 - desconto;
+            }
+        }
+
+        if (qtd >= 6 && qtd < 11) {
+            if (periodo == 'mouth') {
+                return 50;
+            } else {
+                return 50 - desconto;
+            }
+        }
+
+        if (qtd >= 11 && qtd < 16) {
+            if (periodo == 'mouth') {
+                return 46;
+            } else {
+                return 46 - desconto;
+            }
+        }
+
+        if (qtd >= 16 && qtd < 21) {
+            if (periodo == 'mouth') {
+                return 44;
+            } else {
+                return 44 - desconto;
+            }
+        }
+
+        if (qtd >= 21 && qtd < 26) {
+            if (periodo == 'mouth') {
+                return 42;
+            } else {
+                return 42 - desconto;
+            }
+        }
+
+        if (qtd >= 26 && qtd < 31) {
+            if (periodo == 'mouth') {
+                return 40;
+            } else {
+                return 40 - desconto;
+            }
+        }
+
+        if (qtd >= 31 && qtd < 36) {
+            if (periodo == 'mouth') {
+                return 38;
+            } else {
+                return 38 - desconto;
+            }
+        }
+
+        if (qtd >= 36 && qtd < 41) {
+            if (periodo == 'mouth') {
+                return 36;
+            } else {
+                return 36 - desconto;
+            }
+        }
+
+        if (qtd >= 41) {
+            if (periodo == 'mouth') {
+                return 34;
+            } else {
+                return 34 - desconto;
+            }
+        }
+
+    }
+
+    function updateValue() {
+        var campo = $(`#num_users`);
+        var campoTotal = $(`#total`);
+        var valorTotal = $(`#valorTotal`);
+        var qtdUsers = parseInt(campo.val());
+
+        var periodo = $(`#frequencia`).val();
+        //console.log(periodo);
+
+        var valUser = retornaValueUser(qtdUsers, periodo);
+        var total = valUser * qtdUsers;
+
+        $('#assinaturas').text(`${qtdUsers * 20}`);
+        $('#fotos').text(`${qtdUsers * 20}`);
+        $('#pipes').text(`${qtdUsers * 3}`);
+
+        if (periodo == 'mouth') {
+            valorTotal.val(total.toFixed(0));
+            campoTotal.html(`R$ ${total.toFixed(0)}<span>/mês</span><br><span>${valUser.toFixed(0)} mensal por usuário</span>`);
+        } else {
+            var totalFinal = total * 12;
+            valorTotal.val(totalFinal.toFixed(0));
+            campoTotal.html(`R$ ${total.toFixed(0)}<span>/mês</span><br><span>R$ ${totalFinal.toFixed(0)} total</span>`);
+        }
+
+    }
+
+    updateValue();
+    async function createAssinaturaStripe() {
+
+        var frequency = $(`#frequencia`).val();
+        var amount = $(`#valorTotal`).val();
+        var usuarios = $(`#num_users`).val();
+        var assinaturas = $(`#assinaturas`).text();
+        var fotos = $(`#fotos`).text();
+        var pipes = $(`#pipes`).text();
+
+        var dados = {
+            usuarios:usuarios,
+            assinaturas:assinaturas,
+            fotos:fotos,
+            pipes:pipes,
+        }
+
+        espera('on', 'Criando plano...');
+
+        console.log("createPlan.status");
+
+        try{
+
+            var createPlan = await axios.post(`/api/stripe/criar-assento`, {
+                frequency: frequency,
+                amount: amount,
+                dados: dados
+            });
+
+            espera('on', 'Redirecionando para página de pagamento...');
+
+            return createPlan.data;
+        }catch(error){
+            console.log(error)
+            return "Erro";
+        }
+
+        console.log(createPlan.status);
+
+        if(createPlan.status != 200){
+            return "Erro";
+        }
+
+        espera('on', 'Redirecionando para página de pagamento...');
+
+        return createPlan.data;
+
+    }
+
+    async function verifyPaymentMethodAndRedirect(){
+        
+        espera('on', 'Criando ordem de pagamento...');
+
+        $('#botao_ir').text('Aguarde...')
+
+        var assinatura = await createAssinaturaStripe();
+
+        if(assinatura.url && assinatura.url != ""){
+            location.href=assinatura.url;
+        }else{
+            console.log('Error!');
+            espera('off', '');
+            error('Erro ao criar o pagamento.');
+            $('#botao_ir').text('Ir para pagamento')
+        }
+
+    }
+
+</script>
