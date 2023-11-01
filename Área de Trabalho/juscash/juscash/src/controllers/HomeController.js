@@ -46,7 +46,7 @@ function HomeController() {
     e.preventDefault();
     const leadId = e.dataTransfer.getData("leadId");
     const originStepId = e.dataTransfer.getData("originStepId");
-    if (parseInt(originStepId) + 1 !== stepId) {
+    if (parseInt(originStepId) + 1 !== stepId && parseInt(originStepId) !== stepId) {
       toast.error("Leads só podem ser arrastados para a próxima etapa!", {
         position: "bottom-right",
         autoClose: 5000,

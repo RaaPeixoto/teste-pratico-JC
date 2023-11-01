@@ -7,11 +7,10 @@ const PageContainer = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  padding:100px 50px 0px 50px;
   flex-direction: column;
   align-items: center;
   justify-content:center;
-  background-color:${COLORS.lightGray};
+ 
   
 `;
 const OpenedEyes =styled(EyeFill)`
@@ -35,7 +34,6 @@ color:${COLORS.darkGray};
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
-  background-color:${COLORS.white};
   padding: 40px 60px;
   align-items:center;
   div {
@@ -61,7 +59,7 @@ const FormContainer = styled.form`
     max-width:400px;
   }
   button {
-    width: 250px;
+    width: 150px;
     border: none;
     border-radius: 5px;
     background-color: ${COLORS.green};
@@ -71,10 +69,7 @@ const FormContainer = styled.form`
     margin:20px 0;
   }
 
-  @media (max-width: 600px) {
-    width:100vw;
-    height:100vh;
-  }
+
 `;
 const PasswordValidatorContainer = styled.div`
 font-size:16px;
