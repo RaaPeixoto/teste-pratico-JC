@@ -4,7 +4,6 @@ import {
   PasswordValidatorContainer,
   PasswordValidator,
   CheckIcon,
-  LogoContainer,
   EyeSlash,
   OpenedEyes,
 } from "../../assets/style/signUpStyle.js";
@@ -24,9 +23,6 @@ function SignUp({
   return (
     <PageContainer>
       <FormContainer onSubmit={signUp}>
-        <LogoContainer>
-          <Logo />
-        </LogoContainer>
         <div>
           <p>
             Seu nome completo: <span>*</span>{" "}

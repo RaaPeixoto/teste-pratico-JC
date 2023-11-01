@@ -1,7 +1,9 @@
 import {LoadingContainer} from '../assets/style/loadingStyle.js'
+import gif from "../assets/images/gif.svg"
 export default function Loading () {
 return (
-    <LoadingContainer> Loading...</LoadingContainer>
+
+    <LoadingContainer><img src={gif}/></LoadingContainer>
 )
 }
 

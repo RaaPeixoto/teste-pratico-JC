@@ -39,6 +39,11 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+
+}
+.root{
+	height:100vh;
+	width:100vw;
 }
 ol, ul {
 	list-style: none;
