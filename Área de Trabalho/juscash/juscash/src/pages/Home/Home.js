@@ -1,6 +1,6 @@
 import { Header, AddButton,LeadModal } from "../../components/index.js";
 import { LeadsTable } from "./LeadsTable.js";
-import { PageContainer } from "../../assets/style/homeStyle.js";
+import { PageContainer,NoLead,AddButtonContainer } from "../../assets/style/homeStyle.js";
 
 function Home({
   steps,
@@ -14,14 +14,17 @@ function Home({
   return (
     <PageContainer>
       {showLeadModal&& <LeadModal/> }
-      <AddButton text="+ Novo Lead" onClick={() => handleLeadModal()}/>
-      <LeadsTable
+
+      <AddButtonContainer><AddButton text="+ Novo Lead" onClick={() => handleLeadModal()}/></AddButtonContainer>
+      {leadsList.length?       <LeadsTable
         steps={steps}
         leadsList={leadsList}
         handleDragOver={handleDragOver}
         handleDrop={handleDrop}
         handleDragStart={handleDragStart}
-      />
+      /> :
+      <NoLead>Nenhum Lead Cadastrado</NoLead>}
+ 
     </PageContainer>
   );
 }

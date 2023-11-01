@@ -86,7 +86,9 @@ function SignUp({
         <button type="submit" disabled={loading}>
           {loading ? "Carregando" : "Criar Conta"}
         </button>
+        <p>
         A senha precisa conter ao menos:
+        </p>
         <PasswordValidatorContainer>
           <div>
             <CheckIcon verify={passwordVerify.mincaracteres ? "ok" : ""} /> 8

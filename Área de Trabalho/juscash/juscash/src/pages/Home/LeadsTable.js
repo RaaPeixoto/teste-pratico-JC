@@ -15,7 +15,9 @@ function LeadsTable({ steps,leadsList,handleDragOver,handleDrop,handleDragStart 
           </tr>
         </thead>
         <tbody>
-          {leadsList.map((lead) => (
+          {
+
+          leadsList.map((lead) => (
             <tr key={lead.id}>
               {steps.map((step, index) => (
                 <td
@@ -34,7 +36,8 @@ function LeadsTable({ steps,leadsList,handleDragOver,handleDrop,handleDragStart 
                 </td>
               ))}
             </tr>
-          ))}
+          )) 
+        }
         </tbody>
       </Table>
     </>
