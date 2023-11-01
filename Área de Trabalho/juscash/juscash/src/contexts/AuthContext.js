@@ -1,5 +1,5 @@
 import { createContext, useState} from "react";
-import {getLoggedUser} from'../api/index.js'
+import {getLoggedUser} from'../services/AuthService.js'
 export const AuthContext = createContext({});
 
 export const AuthProvider = (props) => {

@@ -7,9 +7,10 @@ const PageContainer = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
+  padding:100px 50px 0px 50px;
   flex-direction: column;
-  justify-content:center;
   align-items: center;
+  justify-content:center;
   background-color:${COLORS.lightGray};
   
 `;
@@ -35,9 +36,7 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   background-color:${COLORS.white};
-  width:60%;
-  height:80%;
-  justify-content:center;
+  padding: 40px 60px;
   align-items:center;
   div {
     width:100%;
@@ -73,8 +72,8 @@ const FormContainer = styled.form`
   }
 
   @media (max-width: 600px) {
-    width:100%;
-    height:100%;
+    width:100vw;
+    height:100vh;
   }
 `;
 const PasswordValidatorContainer = styled.div`
@@ -83,9 +82,7 @@ margin-top:10px;
 `;
 const PasswordValidator = styled.div`
 `;
-const LogoContainer = styled.div`
-  width: 300px; 
-`;
+
 const CheckIcon = styled(CheckSquareFill)`
   color: ${(props) => (props.verify ? COLORS.green : COLORS.lightGray)};
   width: 15px;
@@ -96,7 +93,6 @@ export {
   PasswordValidatorContainer,
   PasswordValidator,
   CheckIcon,
-  LogoContainer,
   EyeSlash,
   OpenedEyes
 };
