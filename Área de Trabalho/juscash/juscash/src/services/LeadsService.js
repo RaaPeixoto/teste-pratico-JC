@@ -16,7 +16,7 @@ function getAllLeads() {
 function updateLeadStep(leadId, stepId) {
   const allLeads = getAllLeads();
   const updatedLeads = allLeads.map((l) => {
-    return leadId == l.id ? { ...l, step_id: stepId } : l;
+    return leadId === l.id ? { ...l, step_id: stepId } : l;
   });
   saveLSLeads(updatedLeads);
 }

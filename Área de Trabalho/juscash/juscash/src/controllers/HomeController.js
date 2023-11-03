@@ -9,7 +9,7 @@ import {
   updateLeadStep,
   postNewLead,
 } from "../services/LeadsService.js";
-import { toast } from "react-toastify";
+import { showError } from "../utils/showMessages.js";
 import { OPPORTUNITIES } from "../constants/opportunities.js";
 function HomeController() {
   const { user } = useContext(AuthContext);
@@ -23,13 +23,14 @@ function HomeController() {
     phone: "",
     opportunities: [],
   });
-  const leads = getUserLeads(user?.id); //COLOCAR USE EFFECT
 
-  const [leadsList, setLeadsList] = useState(leads);
+  const [leadsList, setLeadsList] = useState([]);
   useEffect(() => {
     if (!user) {
       navigate("/signin");
     }
+    const leads = getUserLeads(user?.id);
+    setLeadsList(leads);
     setTimeout(() => {
       setLoading(false);
     }, 1500);
@@ -70,9 +71,12 @@ function HomeController() {
     console.log(leadForm);
   }
   function openNewLeadModal() {
-    console.log(showNewLeadModal);
     setShowNewLeadModal(true);
     checkAllOpportunitiesLead();
+  }
+  function openLeadModal(lead) {
+    setLeadForm(lead);
+    setShowLeadModal(true);
   }
   function checkAllOpportunitiesLead() {
     const allOpportunities = OPPORTUNITIES.map((o) => {
@@ -83,16 +87,16 @@ function HomeController() {
       opportunities: allOpportunities,
     });
   }
-  const handleDragStart = (e, leadId, originStepId) => {
+  function handleDragStart(e, leadId, originStepId) {
     e.dataTransfer.setData("leadId", leadId);
     e.dataTransfer.setData("originStepId", originStepId);
-  };
+  }
 
-  const handleDragOver = (e) => {
+  function handleDragOver(e) {
     e.preventDefault();
-  };
+  }
 
-  const handleDrop = (e, stepId) => {
+  function handleDrop(e, stepId) {
     e.preventDefault();
     const leadId = e.dataTransfer.getData("leadId");
     const originStepId = e.dataTransfer.getData("originStepId");
@@ -100,16 +104,7 @@ function HomeController() {
       parseInt(originStepId) + 1 !== stepId &&
       parseInt(originStepId) !== stepId
     ) {
-      toast.error("Leads só podem ser arrastados para a próxima etapa!", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
+      showError("Leads só podem ser arrastados para a próxima etapa!");
       return;
     }
     const updatedLeads = leadsList.map((lead) => {
@@ -121,7 +116,7 @@ function HomeController() {
 
     setLeadsList(updatedLeads);
     updateLeadStep(leadId, stepId);
-  };
+  }
 
   if (loading) {
     return <Loading />;
@@ -129,24 +124,22 @@ function HomeController() {
 
   function closeLeadModal() {
     setShowNewLeadModal(false);
+    setShowLeadModal(false);
     setLeadForm({
-    name: "",
-    email: "",
-    phone: "",
-    opportunities: [],
-  })
+      name: "",
+      email: "",
+      phone: "",
+      opportunities: [],
+    });
   }
   function addNewLead(e) {
     e.preventDefault();
-    try{
-        const newLeadsList = postNewLead(leadForm, user.id);
-        setLeadsList(newLeadsList);
-        console.log(leadsList)
-        closeLeadModal()
-    }catch(err){
-
-    }
- 
+    try {
+      const newLeadsList = postNewLead(leadForm, user.id);
+      setLeadsList(newLeadsList);
+      console.log(leadsList);
+      closeLeadModal();
+    } catch (err) {}
   }
 
   return (
@@ -158,7 +151,7 @@ function HomeController() {
       handleDragStart={handleDragStart}
       showNewLeadModal={showNewLeadModal}
       showLeadModal={showLeadModal}
-      setShowLeadModal={setShowLeadModal}
+      openLeadModal={openLeadModal}
       openNewLeadModal={openNewLeadModal}
       leadForm={leadForm}
       handleLeadForm={handleLeadForm}

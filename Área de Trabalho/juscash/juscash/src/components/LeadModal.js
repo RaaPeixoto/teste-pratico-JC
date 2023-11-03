@@ -14,12 +14,13 @@ export default function LeadModal({
   handleLeadForm,
   addNewLead,
   closeLeadModal,
+  
 }) {
   console.log(isEditModal);
   return (
     <ModalPageContainer>
       <ModalContainer>
-        <CloseIcon />
+        <CloseIcon onClick={closeLeadModal}/>
         {isEditModal ? <h4>Lead</h4> : <h4>Novo Lead</h4>}
         <Form onSubmit={isEditModal ? closeLeadModal : addNewLead}>
           <h5>Dados do Lead</h5>

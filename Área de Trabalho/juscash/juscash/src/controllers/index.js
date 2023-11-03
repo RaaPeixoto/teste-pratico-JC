@@ -1,4 +1,4 @@
 import HomeController from './HomeController.js'
 import SignUpController from './SignUpController.js'
-
-export{HomeController,SignUpController}
+import SignInController from './SignInController.js'
+export{HomeController,SignUpController,SignInController}

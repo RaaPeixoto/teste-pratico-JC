@@ -14,7 +14,7 @@ function Home({
   handleDragStart,
   openNewLeadModal,
   showNewLeadModal,
-  setShowLeadModal,
+  openLeadModal,
   showLeadModal,
   leadForm,
   handleLeadForm,
@@ -46,7 +46,7 @@ function Home({
       </AddButtonContainer>
       {leadsList.length ? (
         <LeadsTable
-        setShowLeadModal={setShowLeadModal}
+        openLeadModal={openLeadModal}
           steps={steps}
           leadsList={leadsList}
           handleDragOver={handleDragOver}

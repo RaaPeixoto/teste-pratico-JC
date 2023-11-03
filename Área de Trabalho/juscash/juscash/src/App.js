@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import GlobalStyle from "./assets/style/GlobalStyle";
-import { SignIn } from "./pages/index.js";
-import {HomeController,SignUpController} from "./controllers/index.js"
+
+import {HomeController,SignUpController,SignInController} from "./controllers/index.js"
 import { ToastContainer } from 'react-toastify';
 
 function App() {
@@ -25,7 +25,7 @@ theme="colored"
       <Routes>
         <Route path="/" element={<HomeController />} />
         <Route path="/signup" element={<SignUpController />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signin" element={<SignInController />} />
       </Routes>
     </BrowserRouter>
   );
