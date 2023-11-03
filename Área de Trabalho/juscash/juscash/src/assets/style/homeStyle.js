@@ -15,7 +15,7 @@ const NoLead = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  color: ${COLORS.darkGray};
+  color: ${COLORS.gray};
   margin-top:60px;
 `;
 

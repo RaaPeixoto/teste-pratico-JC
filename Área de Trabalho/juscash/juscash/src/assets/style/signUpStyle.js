@@ -32,9 +32,11 @@ color:${COLORS.gray};
 
 `
 const FormContainer = styled.form`
+
   display: flex;
   flex-direction: column;
-  padding: 40px 60px;
+  width:100%;
+  padding:0 30px;
   align-items:center;
   div {
     width:100%;

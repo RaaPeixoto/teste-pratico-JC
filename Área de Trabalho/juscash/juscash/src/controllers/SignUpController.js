@@ -4,7 +4,8 @@ import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { registerUser } from "../services/SignUpServices.js";
+import { registerUser } from "../services/UsersServices.js";
+import { showError, showSuccess } from "../utils/showMessages.js";
 function SignUpController() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -36,7 +37,9 @@ function SignUpController() {
       formVerify();
       const newUser = registerUser(form);
       setUser(newUser);
+      navigate("/");
       showSuccess("Usuário registrado com sucesso");
+      
     } catch (error) {
       showError(error.message);
     }
@@ -65,20 +68,7 @@ function SignUpController() {
       throw new Error(errorMessages.differentPass);
     }
   }
-  function showSuccess(message) {
-    Swal.fire("Sucesso!", message, "success").then((result) => {
-      if (result.isConfirmed) {
-        navigate("/");
-      }
-    });
-  }
-  function showError(message) {
-    Swal.fire({
-      icon: "error",
-      title: "Erro",
-      text: message,
-    });
-  }
+
   function handleForm(e) {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
