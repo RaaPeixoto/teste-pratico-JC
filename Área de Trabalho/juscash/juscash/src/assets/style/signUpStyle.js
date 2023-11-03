@@ -19,7 +19,7 @@ width: 15px;
 right:5px;
 bottom:7px;
 cursor:pointer;
-color:${COLORS.darkGray};
+color:${COLORS.gray};
 
 `
 const EyeSlash = styled(EyeSlashFill)`
@@ -28,7 +28,7 @@ width: 15px;
 right:6px;
 bottom:7px;
 cursor:pointer;
-color:${COLORS.darkGray};
+color:${COLORS.gray};
 
 `
 const FormContainer = styled.form`

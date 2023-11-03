@@ -1,7 +1,7 @@
 
 import { Table } from "../../assets/style/leadsTableStyle.js";
 
-function LeadsTable({ steps,leadsList,handleDragOver,handleDrop,handleDragStart }) {
+function LeadsTable({ steps,leadsList,handleDragOver,handleDrop,handleDragStart,setShowLeadModal}) {
 
 
   return (
@@ -21,11 +21,12 @@ function LeadsTable({ steps,leadsList,handleDragOver,handleDrop,handleDragStart 
             <tr key={lead.id}>
               {steps.map((step, index) => (
                 <td
-                  key={index}
+                  key={lead.id+"_"+index}
                   onDragOver={(e) => handleDragOver(e)}
                   onDrop={(e) => handleDrop(e, index)}
                 >
                   <div
+                  onClick ={()=>setShowLeadModal(true)}
                     draggable
                     onDragStart={(e) =>
                       handleDragStart(e, lead.id, lead.step_id)
