@@ -7,6 +7,7 @@ import {
   SignUpController,
   SignInController,
 } from "./controllers/index.js";
+import {NotFound} from "./pages/NotFound/NotFound.js"
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<HomeController />} />
           <Route path="/signup" element={<SignUpController />} />
           <Route path="/signin" element={<SignInController />} />
+          <Route path="*" element={<NotFound />}/>
         </Routes>
       </AuthProvider>
     </BrowserRouter>
