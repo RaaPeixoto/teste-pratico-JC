@@ -1,13 +1,10 @@
 import {
   PageContainer,
   FormContainer,
-  PasswordValidatorContainer,
-  PasswordValidator,
-  CheckIcon,
   EyeSlash,
   OpenedEyes,
+  StyledLink,
 } from "../../assets/style/signUpStyle.js";
-import { Logo } from "../../components/index.js";
 
 function SignIn({
   form,
@@ -50,7 +47,7 @@ function SignIn({
             <EyeSlash onClick={handleShowPassword} />
           )}
         </div>
-      
+        <StyledLink to="/signup"> Primeiro acesso? Cadastre-se</StyledLink>
         <button type="submit" disabled={loading}>
           {loading ? "Carregando" : "Entrar"}
         </button>

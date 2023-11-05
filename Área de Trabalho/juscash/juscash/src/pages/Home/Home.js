@@ -1,5 +1,8 @@
-import { Header, AddButton, LeadModal } from "../../components/index.js";
-import { LeadsTable } from "./LeadsTable.js";
+import {
+  AddButton,
+  LeadModal,
+  LeadsTable,
+} from "../../components/Home/index.js";
 import {
   PageContainer,
   NoLead,
@@ -25,16 +28,16 @@ function Home({
     <PageContainer>
       {showNewLeadModal && (
         <LeadModal
-        isEditModal={false}
+          isEditModal={false}
           leadForm={leadForm}
           closeLeadModal={closeLeadModal}
           addNewLead={addNewLead}
           handleLeadForm={handleLeadForm}
         />
       )}
-  {showLeadModal&& (
+      {showLeadModal && (
         <LeadModal
-        isEditModal={true}
+          isEditModal={true}
           leadForm={leadForm}
           closeLeadModal={closeLeadModal}
           addNewLead={addNewLead}
@@ -46,7 +49,7 @@ function Home({
       </AddButtonContainer>
       {leadsList.length ? (
         <LeadsTable
-        openLeadModal={openLeadModal}
+          openLeadModal={openLeadModal}
           steps={steps}
           leadsList={leadsList}
           handleDragOver={handleDragOver}

@@ -5,22 +5,19 @@ import {
   CloseIcon,
   OpportunitiesContainer,
   ButtonsContainer,
-} from "../assets/style/leadModalStyle.js";
-import InputMask from "react-input-mask"; //DESINSTALAR
-import { OPPORTUNITIES } from "../constants/opportunities.js";
+} from "../../assets/style/leadModalStyle.js";
+import { OPPORTUNITIES } from "../../constants/opportunities.js";
 export default function LeadModal({
   isEditModal,
   leadForm,
   handleLeadForm,
   addNewLead,
   closeLeadModal,
-  
 }) {
-  console.log(isEditModal);
   return (
     <ModalPageContainer>
       <ModalContainer>
-        <CloseIcon onClick={closeLeadModal}/>
+        <CloseIcon onClick={closeLeadModal} />
         {isEditModal ? <h4>Lead</h4> : <h4>Novo Lead</h4>}
         <Form onSubmit={isEditModal ? closeLeadModal : addNewLead}>
           <h5>Dados do Lead</h5>

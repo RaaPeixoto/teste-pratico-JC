@@ -2,15 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { Home } from "../pages/index.js";
-import { Loading } from "../components/index.js";
+import Loading from "../components/Loading.js";
 import { STEPS } from "../constants/steps.js";
 import {
   getUserLeads,
   updateLeadStep,
   postNewLead,
 } from "../services/LeadsService.js";
-import { showError } from "../utils/showMessages.js";
+import { showError, showSuccess } from "../utils/showMessages.js";
 import { OPPORTUNITIES } from "../constants/opportunities.js";
+import checkFormFields from "../utils/checkFormFields.js";
 function HomeController() {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -67,8 +68,6 @@ function HomeController() {
     } else {
       setLeadForm({ ...leadForm, [name]: value });
     }
-
-    console.log(leadForm);
   }
   function openNewLeadModal() {
     setShowNewLeadModal(true);
@@ -108,7 +107,7 @@ function HomeController() {
       return;
     }
     const updatedLeads = leadsList.map((lead) => {
-      if (lead.id == leadId) {
+      if (lead.id === leadId) {
         return { ...lead, step_id: stepId };
       }
       return lead;
@@ -135,11 +134,17 @@ function HomeController() {
   function addNewLead(e) {
     e.preventDefault();
     try {
+      const isAllFieldsFilled = checkFormFields(leadForm);
+      if (!isAllFieldsFilled) {
+        throw new Error("Preencha Todos os campos");
+      }
       const newLeadsList = postNewLead(leadForm, user.id);
       setLeadsList(newLeadsList);
-      console.log(leadsList);
       closeLeadModal();
-    } catch (err) {}
+      showSuccess("Lead adicionado com sucesso!");
+    } catch (error) {
+      showError(error.message);
+    }
   }
 
   return (

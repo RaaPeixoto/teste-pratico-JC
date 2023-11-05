@@ -1,13 +1,11 @@
 import {
   PageContainer,
   FormContainer,
-  PasswordValidatorContainer,
-  PasswordValidator,
-  CheckIcon,
   EyeSlash,
   OpenedEyes,
+  StyledLink,
 } from "../../assets/style/signUpStyle.js";
-import { Logo } from "../../components/index.js";
+import { PasswordCheckList } from "../../components/SignUp/index.js";
 
 function SignUp({
   form,
@@ -25,7 +23,7 @@ function SignUp({
       <FormContainer onSubmit={signUp}>
         <div>
           <p>
-            Seu nome completo: <span>*</span>{" "}
+            Seu nome completo: <span>*</span>
           </p>
           <input
             type="text"
@@ -37,7 +35,7 @@ function SignUp({
         </div>
         <div>
           <p>
-            E-mail: <span>*</span>{" "}
+            E-mail: <span>*</span>
           </p>
           <input
             name="email"
@@ -65,6 +63,7 @@ function SignUp({
             <EyeSlash onClick={handleShowPassword} />
           )}
         </div>
+        <PasswordCheckList passwordVerify={passwordVerify} />
         <div>
           <p>
             Confirme sua senha: <span>*</span>
@@ -83,30 +82,10 @@ function SignUp({
             <EyeSlash onClick={handleShowConfirmPassword} />
           )}
         </div>
+        <StyledLink to="/signin"> Já possui uma conta? Fazer login</StyledLink>
         <button type="submit" disabled={loading}>
           {loading ? "Carregando" : "Criar Conta"}
         </button>
-        <p>
-        A senha precisa conter ao menos:
-        </p>
-        <PasswordValidatorContainer>
-          <div>
-            <CheckIcon verify={passwordVerify.mincaracteres ? "ok" : ""} /> 8
-            caracteres
-          </div>
-          <div>
-            <CheckIcon verify={passwordVerify.especial ? "ok" : ""} /> um
-            caracter especial
-          </div>
-          <div>
-            <CheckIcon verify={passwordVerify.numerico ? "ok" : ""} /> um
-            caracter numérico
-          </div>
-          <div>
-            <CheckIcon verify={passwordVerify.alfanumerico ? "ok" : ""} /> um
-            caracter alfanumérico
-          </div>
-        </PasswordValidatorContainer>
       </FormContainer>
     </PageContainer>
   );

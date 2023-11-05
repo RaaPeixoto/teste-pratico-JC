@@ -1,5 +1,4 @@
-import { createGlobalStyle } from "styled-components"
-
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     html, body, span, applet, object, iframe,
@@ -63,6 +62,6 @@ table {
 *{
 	box-sizing:border-box;
 }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;
