@@ -4,7 +4,7 @@ import {
   EyeSlash,
   OpenedEyes,
   StyledLink,
-} from "../../assets/style/signUpStyle.js";
+} from "../../assets/style/signUpSignInStyle.js";
 
 function SignIn({
   form,
