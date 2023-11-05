@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants/colors";
-
+import { Link } from "react-router-dom";
+import { LogOut } from "@styled-icons/boxicons-regular/LogOut";
 const PageContainer = styled.div`
   width: 100vw;
   min-height: 100vh;
@@ -24,5 +25,24 @@ const AddButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  position: fixed;
+  top: 20px;
+  right: 50px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  align-items:flex-end;
+  color: ${COLORS.darkGray};
+   @media (max-width: 600px) {
+    top: 5px;
+    right: 5px;
+  }
+`;
 
-export { PageContainer, NoLead, AddButtonContainer };
+const LogOutIcon = styled(LogOut)`
+  width: 20px;
+`;
+export { PageContainer, NoLead, AddButtonContainer, StyledLink, LogOutIcon };

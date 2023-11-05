@@ -7,6 +7,8 @@ import {
   PageContainer,
   NoLead,
   AddButtonContainer,
+  StyledLink,
+  LogOutIcon
 } from "../../assets/style/homeStyle.js";
 
 function Home({
@@ -26,6 +28,7 @@ function Home({
 }) {
   return (
     <PageContainer>
+      <StyledLink to="/signin"><LogOutIcon/> Sair</StyledLink>
       {showNewLeadModal && (
         <LeadModal
           isEditModal={false}
