@@ -1,8 +1,17 @@
 import { generateUniqueId } from "../utils/generateUniqueId";
-function registerUser(form) {
+import bcrypt from "bcryptjs";
+
+async function registerUser(form) {
   const id = generateUniqueId();
-  const user = { id: id, ...form };
-  localStorage.setItem("user", JSON.stringify(user)); //signIn
+  const encryptedPass = await encryptPass(form.password);
+  const user = {
+    id: id,
+    ...form,
+    password: encryptedPass,
+    confirmPassword: encryptedPass,
+  };
+
+  localStorage.setItem("user", JSON.stringify(user));
   var users = localStorage.getItem("users");
   users = users ? JSON.parse(users) : [];
   users.push(user);
@@ -17,13 +26,40 @@ function getAllUsers() {
   const users = localStorage.getItem("users");
   return users ? JSON.parse(users) : null;
 }
-function startSession(form) {
+async function startSession(form) {
   const allUsers = getAllUsers();
-  const user = allUsers.find((u) => u.email === form.email && u.password === form.password);
-  if (!user) {
-    throw new Error("E-mail e/ou senha incorreto(s)");
-
+  for (const user of allUsers) {
+    if (
+      user.email === form.email &&
+      (await isPassMatch(form.password, user.password))
+    ) {
+      setLSUser(JSON.stringify(user));
+      return user;
+    }
   }
-  return user;
+  throw new Error("E-mail e/ou senha incorreto(s)");
 }
-export { registerUser, getLoggedUser, startSession };
+
+function setLSUser(user) {
+  localStorage.setItem("user", user);
+}
+
+async function encryptPass(password) {
+  try {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+    return hashedPassword;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+
+async function isPassMatch(password, hashedPassword) {
+  try {
+    const match = await bcrypt.compare(password, hashedPassword);
+    return match;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+export { registerUser, getLoggedUser, startSession, setLSUser };

@@ -1,19 +1,20 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants/colors";
 const Table = styled.table`
-  margin-top: 25px;
+  margin-top: 10px;
   width: 100%;
   font-size: 16px;
   th {
     padding: 0 10px;
     text-align: start;
     vertical-align: middle;
-    border: 1px solid ${COLORS.darkGrey};
+    border: 1px solid ${COLORS.gray};
     height: 50px;
     background-color: ${COLORS.white};
   }
   tr {
-    border-bottom: 4px double ${COLORS.darkGray};
+    overflow-y: auto;
+    border-bottom: 4px double ${COLORS.gray};
   }
   tr:nth-child(odd) {
     background-color: ${COLORS.lightGray};
@@ -28,7 +29,6 @@ const Table = styled.table`
     text-align: center;
     vertical-align: middle;
     div {
-      /* card */
       display: flex;
       align-items: center;
       justify-content: center;

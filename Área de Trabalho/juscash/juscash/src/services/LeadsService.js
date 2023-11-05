@@ -7,7 +7,6 @@ function getUserLeads(userId) {
   return userLeads;
 }
 function getAllLeads() {
-  console.log("all");
   const allLeads = localStorage.getItem("leads")
     ? JSON.parse(localStorage.getItem("leads"))
     : [];

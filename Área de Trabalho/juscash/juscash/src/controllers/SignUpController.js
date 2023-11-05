@@ -3,9 +3,9 @@ import { AuthContext } from "../contexts/AuthContext";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Swal from "sweetalert2";
-import { registerUser } from "../services/UsersServices.js";
+import { registerUser, setLSUser } from "../services/UsersServices.js";
 import { showError, showSuccess } from "../utils/showMessages.js";
+import checkFormFields from "../utils/checkFormFields.js";
 function SignUpController() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -32,33 +32,33 @@ function SignUpController() {
   }
   function signUp(e) {
     e.preventDefault();
-    console.log(form);
+    setLoading(true);
     try {
       formVerify();
       const newUser = registerUser(form);
       setUser(newUser);
       navigate("/");
       showSuccess("Usuário registrado com sucesso");
-      
     } catch (error) {
       showError(error.message);
     }
+    setLoading(false);
   }
 
   function formVerify() {
     const errorMessages = {
       missingFields: "Preencha todos os campos!",
-      weakPassword:
-        "Sua senha deve conter ao menos 8 caracteres, contendo ao menos, um caracter especial, um caracter numérico, um caracter alfanumérico",
-      differentPass: "As senhas devem coincidir",
+      weakPassword: "Sua senha deve atender a todos os critérios solicitados!",
+      differentPass: "As senhas devem coincidir!",
     };
-
-    if (!form.name || !form.email || !form.password || !form.confirmPassword) {
+    const isAllFieldsFilled = checkFormFields(form);
+    if (!isAllFieldsFilled) {
       throw new Error(errorMessages.missingFields);
     }
 
-    const regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-zA-Z0-9]).{8,}$/;
-    const isStrongPassword = regex.test(form.password);
+    const isStrongPassword = Object.values(passwordVerify).every(
+      (value) => value === true
+    );
 
     if (!isStrongPassword) {
       throw new Error(errorMessages.weakPassword);
@@ -72,14 +72,15 @@ function SignUpController() {
   function handleForm(e) {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-    name === "password" && verifyPassword(value);
+    if (name === "password") {
+      verifyPassword(value);
+    }
   }
   function verifyPassword(pass) {
     const minCaracteresValid = pass.length >= 8;
     const especialValid = /[!@#$%^&*]/.test(pass);
     const numericoValid = /[0-9]/.test(pass);
     const alfanumericoValid = /[a-zA-Z0-9]/.test(pass);
-    console.log(especialValid);
     setPasswordVerify({
       mincaracteres: minCaracteresValid,
       especial: especialValid,
@@ -89,7 +90,7 @@ function SignUpController() {
   }
 
   useEffect(() => {
-    localStorage.setItem("user", ""); //SER NO SERVICE
+    setLSUser("");
     setUser(null);
   }, []);
 
