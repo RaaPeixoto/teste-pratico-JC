@@ -25,7 +25,7 @@ function SignInController() {
     try {
       const user = await startSession(form);
       setUser(user);
-      showSuccess("Bem vindo");
+      showSuccess(`Bem vindo(a) ${user.name}!`);
       navigate("/");
     } catch (error) {
       showError(error.message);
