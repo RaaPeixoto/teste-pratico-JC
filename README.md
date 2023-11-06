@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# JusCash - Aplicação de Gestão de Leads
+<img src="https://www.juscash.com.br/wp-content/themes/s3/assets/img/logo-white.svg" width="100%"> 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Índice
 
-## Available Scripts
+- [Introdução](#introdução)
+- [Capturas de Tela](#capturas-de-tela)
+- [Descrição da Aplicação](#descrição-da-aplicação)
+- [Tecnologias e Bibliotecas Utilizadas](#tecnologias-e-bibliotecas-utilizadas)
+- [Como Executar](#como-executar)
+- [Verificando a Porta](#verificando-a-porta)
+## Introdução <a name="introdução"></a>
 
-In the project directory, you can run:
+Este é um projeto front-end desenvolvido como parte do teste prático para a empresa JusCash. A aplicação inclui páginas de login, signup e uma página inicial que serve como uma ferramenta de gestão de leads, permitindo aos usuários gerenciar seus leads em diferentes etapas, com recursos de arrastar e soltar.
 
-### `npm start`
+## Capturas de Tela <a name="capturas-de-tela"></a>
+<div style="display:flex; flex-wrap:wrap; justify-content:space-around;">
+<div style="width: 40%;">
+Tela de Login
+    <img src="./public/readme_images/signin.png" alt="Tela de Login">
+</div>
+<div style="width: 40%;">
+Tela de Registro
+    <img src="./public/readme_images/signup.png" alt="Tela de Registro">
+</div>
+<div style="width: 40%;">
+Tela de Loading
+    <img src="./public/readme_images/loading.png" alt="Tela de Loading">
+</div>
+<div style="width: 40%;">
+Tela da Página Inicial
+    <img src="./public/readme_images/home.png" alt="Tela da Página Inicial">
+</div>
+<div style="width: 40%;">
+Tela Novo Lead
+    <img src="./public/readme_images/modal.png" alt="Tela Novo Lead">
+</div>
+<div style="width: 40%;">
+Tela Exibir Lead
+    <img src="./public/readme_images/edit_modal.png" alt="Tela Exibir Lead">
+</div>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Descrição da Aplicação <a name="descrição-da-aplicação"></a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A aplicação JusCash é uma ferramenta que permite que os usuários gerenciem seus leads de maneira eficaz. As principais funcionalidades incluem:
 
-### `npm test`
+- **Login e Signup**: Os usuários podem fazer login em suas contas existentes ou se cadastrar como novos usuários.
+- **Gestão de Leads**: Os leads podem ser adicionados, movidos entre etapas e editados na página inicial.
+- **Arrastar e Soltar**: A funcionalidade de arrastar e soltar facilita a organização dos leads nas diferentes etapas.
+- **Local Storage**: Os dados dos leads são armazenados localmente no navegador do usuário.
+- **Rotas com React Router**: O aplicativo usa o React Router para criar rotas para as diferentes páginas.
+- **Notificações com React Toastify**: Notificações são exibidas ao usuário usando o React Toastify.
+- **Dockerização**: A aplicação pode ser executada em um contêiner Docker para facilitar a implantação.
+- **Formatação com Prettier**: O código-fonte é formatado automaticamente com o Prettier para manter a consistência.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologias e Bibliotecas Utilizadas <a name="tecnologias-e-bibliotecas-utilizadas"></a>
 
-### `npm run build`
+- <img src="https://reactjs.org/favicon.ico" width="16"> [React](https://reactjs.org/)
+- <img src="https://avatars.githubusercontent.com/u/20658825?s=200&v=4" width="16"> [Styled Components](https://styled-components.com/)
+- <img src="https://react-icons.github.io/react-icons/favicon.ico" width="16"> [React Icons](https://react-icons.github.io/react-icons/)
+- <img src="https://repository-images.githubusercontent.com/9108007/d7f26380-443a-11ea-9b05-4f2c6aa556bf" width="16"> [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- <img src="https://static-00.iconduck.com/assets.00/react-router-icon-2048x1116-jfeevj0l.png" width="16"> [React Router DOM](https://reactrouter.com/web/guides/quick-start)
+- <img src="https://fkhadra.github.io/react-toastify/img/favicon.ico" width="16"> [React Toastify](https://fkhadra.github.io/react-toastify/)
+- <img src="https://www.docker.com/favicon.ico" width="16"> [Docker](https://www.docker.com/)
+- <img src="https://prettier.io/icon.png" width="16"> [Prettier](https://prettier.io/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Como Executar <a name="como-executar"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado na sua máquina.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Com npm
 
-### `npm run eject`
+1. Clone este repositório para sua máquina.
+2. Navegue até a pasta do projeto.
+3. Execute o seguinte comando para instalar as dependências:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+npm install
+```
+4. Em seguida, inicie a aplicação com o comando:
+```
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A aplicação estará disponível em [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Com Docker (recomendado)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Certifique-se de ter o Docker instalado na sua máquina.
 
-## Learn More
+1. Clone este repositório para sua máquina.
+2. Navegue até a pasta do projeto.
+3. Execute o seguinte comando para construir a imagem Docker:
+```
+docker build -t juscash-app .
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Após a construção, inicie um contêiner com o comando:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+docker run -p 4200:3000 juscash-app
+```
 
-### Code Splitting
+A aplicação estará disponível em [http://localhost:4200](http://localhost:4200) no seu navegador.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
