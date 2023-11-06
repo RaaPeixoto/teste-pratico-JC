@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants/colors";
 import { Link } from "react-router-dom";
-import { LogOut } from "@styled-icons/boxicons-regular/LogOut";
+import { BiLogOut } from "react-icons/bi";
 const PageContainer = styled.div`
   width: 100vw;
   min-height: 100vh;
@@ -42,7 +42,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const LogOutIcon = styled(LogOut)`
-  width: 20px;
+const LogOutIcon = styled(BiLogOut)`
+  font-size: 20px;
 `;
 export { PageContainer, NoLead, AddButtonContainer, StyledLink, LogOutIcon };

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants/colors";
-import { EyeSlashFill } from "@styled-icons/bootstrap/EyeSlashFill";
-import { EyeFill } from "@styled-icons/bootstrap/EyeFill";
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { AiFillEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
 const PageContainer = styled.div`
   width: 100vw;
@@ -10,19 +10,19 @@ const PageContainer = styled.div`
   flex-direction: column;
   padding: 130px 0 10px 0;
 `;
-const OpenedEyes = styled(EyeFill)`
+const OpenedEyes = styled(AiFillEye)`
   position: absolute;
-  width: 15px;
+  font-size: 20px;
   right: 5px;
-  bottom: 7px;
+  bottom: 5px;
   cursor: pointer;
   color: ${COLORS.gray};
 `;
-const EyeSlash = styled(EyeSlashFill)`
+const EyeSlash = styled(AiFillEyeInvisible)`
   position: absolute;
-  width: 15px;
+  font-size: 20px;
   right: 6px;
-  bottom: 7px;
+  bottom: 5px;
   cursor: pointer;
   color: ${COLORS.gray};
 `;
@@ -31,7 +31,7 @@ const FormContainer = styled.form`
   flex-direction: column;
   height: 100%;
   overflow-y: auto;
-  padding: 0 30px;
+  padding: 0 20px;
   align-items: center;
   div {
     width: 100%;
@@ -44,7 +44,7 @@ const FormContainer = styled.form`
   p {
     font-size: 16px;
     font-weight: 600;
-    margin: 10px 0 5px 0;
+    margin: 15px 0 5px 0;
     color: ${COLORS.darkBlue};
   }
   span {
@@ -73,7 +73,7 @@ const StyledLink = styled(Link)`
   color: ${COLORS.darkBlue};
   font-size: 14px;
   font-weight: 600;
-  margin: 10px 0 5px 0;
+  margin: 15px 0 5px 0;
   width: 100%;
   max-width: 400px;
   text-align: end;

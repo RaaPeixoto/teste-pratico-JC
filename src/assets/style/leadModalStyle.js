@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants/colors";
-import { CloseOutline } from "@styled-icons/evaicons-outline/CloseOutline";
+import { IoMdClose } from "react-icons/io";
 const ModalPageContainer = styled.div`
   position: fixed;
   z-index: 5;
@@ -14,7 +14,7 @@ const ModalPageContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const CloseIcon = styled(CloseOutline)`
+const CloseIcon = styled(IoMdClose)`
   width: 25px;
   position: absolute;
   top: 10px;
@@ -25,10 +25,9 @@ const CloseIcon = styled(CloseOutline)`
 const ModalContainer = styled.div`
   position: relative;
   background-color: ${COLORS.white};
-  padding: 30px 10px 10px 30px;
+  padding: 30px 10px 20px 30px;
   max-width: 600px;
   width: 90%;
-  height: 90%;
   overflow-y: auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   h4 {
@@ -122,11 +121,4 @@ const ButtonsContainer = styled.div`
     background-color: ${COLORS.lightBlue};
   }
 `;
-export {
-  ModalPageContainer,
-  ModalContainer,
-  Form,
-  CloseIcon,
-  OpportunitiesContainer,
-  ButtonsContainer,
-};
+export { ModalPageContainer, ModalContainer, Form, CloseIcon, OpportunitiesContainer, ButtonsContainer };
