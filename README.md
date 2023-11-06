@@ -3,6 +3,7 @@
 </p>
 
 # JusCash - Aplicação de Gestão de Leads
+Deploy disponível em: https://teste-pratico-jc.vercel.app/
 ## Índice
 
 - [Introdução](#introdução)
