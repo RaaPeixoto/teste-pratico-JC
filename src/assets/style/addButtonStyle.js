@@ -8,6 +8,10 @@ const Button = styled.button`
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
+
+  @media (max-width: 600px) {
+    padding: 5px 20px;
+  }
 `;
 
 export { Button };

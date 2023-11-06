@@ -8,7 +8,10 @@ const PageContainer = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 130px 0 10px 0;
+  padding: 180px 0 10px 0;
+  @media (max-width: 600px) {
+    padding: 130px 10px 10px 10px;
+  }
 `;
 const OpenedEyes = styled(AiFillEye)`
   position: absolute;
