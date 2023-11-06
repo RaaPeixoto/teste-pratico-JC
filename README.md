@@ -1,6 +1,6 @@
 # JusCash - Aplicação de Gestão de Leads
 
-<div style="display:flex; width:100%; justify-content:center;">
+<div style="display:flex; width:400px; justify-content:center;">
 
 <img src="https://www.juscash.com.br/wp-content/themes/s3/assets/img/logo-white.svg" width="50%"> 
 </div>
@@ -19,13 +19,13 @@
 Este é um projeto front-end desenvolvido como parte do teste prático para a empresa JusCash. A aplicação inclui páginas de login, signup e uma página inicial que serve como uma ferramenta de gestão de leads, permitindo aos usuários gerenciar seus leads em diferentes etapas, com recursos de arrastar e soltar.
 
 ## Capturas de Tela <a name="capturas-de-tela"></a>
-
+<figure>
 <div style="display:flex; width:100%; flex-wrap:wrap; justify-content:space-around;">
 <div style="width: 40%; display:flex; flex-direction:column; align-items:center; margin-bottom:30px;" >
 Tela de Login
     <img src="./public/readme_images/signin.png" alt="Tela de Login">
 </div>
-<div style="width: 40%; display:flex; flex-direction:column; align-items:center; margin-bottom:30px;" >
+<div style="width: 300px; display:flex; flex-direction:column; align-items:center; margin-bottom:30px;" >
 Tela de Registro
     <img src="./public/readme_images/signup.png" alt="Tela de Registro">
 </div>
@@ -46,7 +46,7 @@ Tela Exibir Lead
     <img src="./public/readme_images/edit_modal.png" alt="Tela Exibir Lead">
 </div>
 </div>
-
+</figure>
 ## Descrição da Aplicação <a name="descrição-da-aplicação"></a>
 
 A aplicação JusCash é uma ferramenta que permite que os usuários gerenciem seus leads de maneira eficaz. As principais funcionalidades incluem:
