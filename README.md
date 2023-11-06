@@ -1,9 +1,7 @@
 # JusCash - Aplicação de Gestão de Leads
-
-<div style="display:flex; width:400px; justify-content:center;">
-
-<img src="https://www.juscash.com.br/wp-content/themes/s3/assets/img/logo-white.svg" width="50%"> 
-</div>
+<p align="center">
+  <img src="https://www.juscash.com.br/wp-content/themes/s3/assets/img/logo-white.svg" width="300">
+</p>
 
 ## Índice
 
